@@ -1,0 +1,84 @@
+.page {
+  --panel:#f1f7f6;
+  --edge:#cbdedc;
+  --accent:#17634e;
+  --signal:#8ee3bb;
+  color:var(--ink);
+  background:radial-gradient(ellipse 70% 22rem at 50% 0,#e6f2f4,transparent);
+}
+.page[data-service="generative-ai-solutions"] {--signal:#acbfff}
+.page[data-service="machine-learning"] {--signal:#8addf0}
+.page[data-service="business-process-automation"] {--signal:#d8e695}
+:global([data-theme="dark"]) .page {
+  --panel:#192621;
+  --edge:#39544b;
+  --accent:#a1e6c3;
+  background:radial-gradient(ellipse 70% 25rem at 50% 0,#1c332d,transparent);
+}
+.hero,.workflow,.offers,.contact,.related {width:min(90%,1120px);margin-inline:auto}
+.hero {text-align:center;padding:clamp(16px,2.5vw,36px) 0}
+.breadcrumb,.actions {display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 18px}
+.breadcrumb {margin-bottom:clamp(22px,4vw,48px);font-size:14px;color:var(--muted)}
+.breadcrumb a:hover,.jump:hover {text-decoration:underline}
+.label {margin:0;color:var(--accent);font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:12px}
+.hero h1 {max-width:18ch;margin:14px auto;font-size:clamp(28px,3.8vw,52px);font-weight:720;letter-spacing:-.065em;line-height:1.02;text-wrap:balance}
+.lead,.offers p,.contact p {color:var(--muted);line-height:1.65}
+.lead {max-width:65ch;margin:18px auto 25px;font-size:clamp(16px,2vw,20px)}
+.primary,.jump {display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;font-weight:650}
+.primary {border-radius:8px;padding:10px 15px;background:#17634e;color:#fff}
+.primary:hover {background:#114c3d}
+:global([data-theme="dark"]) .primary {background:#a1e6c3;color:#102c24}
+.jump {color:var(--accent)}
+.workflow {
+  scroll-margin-top:120px;
+  padding:clamp(22px,4.5vw,56px);
+  border-radius:22px;
+  background:radial-gradient(ellipse at top right,color-mix(in srgb,var(--signal) 22%,transparent),transparent 60%),#102521;
+  color:#f4fbf8;
+}
+.workflowTitle {display:flex;justify-content:space-between;align-items:center;gap:16px}
+.workflowTitle svg,.workflow .label {color:var(--signal)}
+.workflowTitle svg {flex:none}
+.page h2 {margin:7px 0 0;font-size:clamp(27px,3.8vw,49px);line-height:1.1;letter-spacing:-.045em}
+.workflow ol {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:34px 0 0;padding:0;list-style:none}
+.workflow li {position:relative;border-top:1px solid #ffffff48;padding-top:18px}
+.node {position:absolute;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--signal);box-shadow:0 0 12px var(--signal)}
+.workflow h3,.offers h3 {margin:0 0 6px;font-size:clamp(17px,2vw,22px)}
+.workflow li p {margin:0;color:#d2e3de;line-height:1.55}
+.offers {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(16px,5vw,70px);padding-block:clamp(38px,7vw,86px)}
+.offers article {padding:18px 0;border-bottom:1px solid var(--edge)}
+.offers article:first-child {border-top:1px solid var(--edge)}
+.offers p,.contact p {margin:0}
+.contact {display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(20px,4vw,42px);border-radius:16px;background:var(--panel);border:1px solid var(--edge)}
+.contact p {margin-top:10px}
+.contact .primary {flex:none}
+.related {display:flex;flex-wrap:wrap;gap:14px 24px;padding:26px 0 clamp(42px,7vw,82px)}
+.related a {display:inline-flex;align-items:center;gap:8px;font-weight:650;color:var(--accent)}
+.related a:hover {text-decoration:underline}
+@media (max-width:640px) {
+  .workflow ol,.offers {grid-template-columns:1fr}
+  .workflow ol {gap:18px;margin-top:24px}
+  .contact {align-items:flex-start;flex-direction:column}
+}
+@media (prefers-reduced-motion:no-preference) {
+  .workflow li {animation:step-enter .55s ease-out both}
+  .workflow li:nth-child(2) {animation-delay:110ms}
+  .workflow li:nth-child(3) {animation-delay:220ms}
+}
+@keyframes step-enter {from {opacity:0;transform:translateY(7px)}}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .heroInner, .shell {
+    width: min(90%, 1220px);
+    margin-inline: auto;
+  }
+}

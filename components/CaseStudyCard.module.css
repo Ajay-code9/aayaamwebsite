@@ -1,0 +1,11 @@
+/* Hover lift effect for case study cards */
+.case-study-card:hover .case-study-media {
+  transform: translateY(-6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+}
+
+/* Ensure media has transition base */
+.case-study-media {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}

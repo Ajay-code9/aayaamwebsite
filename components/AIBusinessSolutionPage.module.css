@@ -1,0 +1,55 @@
+.page {
+  --accent:#3f5189;
+  --surface:#f0f3fb;
+  --edge:#d1daee;
+  color:var(--ink);
+}
+:global([data-theme="dark"]) .page {--accent:#bbcaff;--surface:#242c42;--edge:#495574}
+.inner {width:min(90%,1180px);margin-inline:auto;padding-block:clamp(24px,5vw,70px)}
+.crumb,.related {display:flex;flex-wrap:wrap;gap:8px 16px}
+.crumb {font-size:14px;color:var(--muted)}
+.hero {padding-block:clamp(16px,2.5vw,36px)}
+.label {margin:0;color:var(--accent);font-size:14px;font-weight:700}
+.hero h1 {max-width:21ch;margin:12px 0 16px;font-size:clamp(28px,3.8vw,52px);font-weight:720;line-height:1.03;letter-spacing:-.055em;text-wrap:balance}
+.hero p:not(.label),.example p:not(.label),.scope p,.bottom p {color:var(--muted);line-height:1.65}
+.hero p:not(.label) {max-width:65ch;font-size:clamp(16px,1.6vw,20px)}
+.button,.scope a,.contact a,.related a {display:inline-flex;align-items:center;gap:8px;font-weight:680;color:var(--accent)}
+.button {min-height:44px;padding:10px 14px;border-radius:9px;background:var(--accent);color:var(--surface)}
+.example,.bottom {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(18px,5vw,58px)}
+.example {padding:clamp(20px,4vw,50px);border:1px solid var(--edge);border-radius:22px;background:var(--surface)}
+.page h2 {margin:0 0 13px;font-size:clamp(24px,3.5vw,42px);letter-spacing:-.04em;line-height:1.12}
+.example h2 {margin-top:8px}
+.preview {margin:0;display:grid;gap:7px;color:#eef2ff}
+.preview div {padding:13px 15px;background:#202d50;border-radius:9px;box-shadow:0 3px 0 #141e38}
+.preview div:nth-child(2) {background:#314275}
+.preview dt {display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#cbd8ff}
+.preview dd {margin:6px 0 0;line-height:1.45}
+.scope {padding-block:clamp(28px,5vw,65px)}
+.scope ul {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;list-style:none;margin:0;padding:0}
+.scope li {border-top:2px solid var(--edge);padding-top:14px;font-weight:650}
+.scope p {margin:7px 0 0;font-weight:400}
+.bottom details {padding-block:13px;border-top:1px solid var(--edge)}
+.bottom summary {cursor:pointer;font-weight:650}
+.bottom p {margin:8px 0}
+.contact {padding:clamp(18px,3vw,30px);border:1px solid var(--edge);border-radius:14px}
+.contact a {margin-top:8px}
+.related {margin-top:24px}
+.page a:hover {text-decoration:underline}
+.page a svg {flex:none}
+@media(max-width:700px) {.example,.bottom{grid-template-columns:1fr}}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .heroInner, .shell {
+    width: min(90%, 1220px);
+    margin-inline: auto;
+  }
+}

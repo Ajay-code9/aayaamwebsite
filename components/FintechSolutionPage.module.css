@@ -1,0 +1,67 @@
+.page {
+  --paper: #f0f7f7;
+  --line: #c6dcdc;
+  --accent: #16665b;
+  color: var(--ink);
+}
+:global([data-theme="dark"]) .page {
+  --paper: #192c28;
+  --line: #3c5a51;
+  --accent: #a3e9cb;
+}
+.inner {width: min(90%, 1200px); margin-inline: auto; padding: clamp(24px, 4vw, 55px) 0 clamp(45px, 7vw, 88px);}
+.breadcrumb {display: flex; flex-wrap: wrap; gap: 6px 10px; margin-bottom: 22px; color: var(--muted); font-size: 14px;}
+.page a:hover {text-decoration: underline;}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+  align-items: center;
+  gap: clamp(22px, 5vw, 70px);
+  padding:clamp(18px,2.8vw,36px);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 100% 0, var(--line), transparent 72%), var(--paper);
+}
+.hero h1 {max-width: 17ch; margin: 0; font-size: clamp(28px,3.8vw,52px); line-height: 1.04; letter-spacing: -.055em; font-weight: 720; text-wrap: balance;}
+.hero p, .content p, .proof p:not(.label) {color: var(--muted); line-height: 1.65;}
+.hero p {margin: 17px 0 22px; font-size: clamp(16px, 1.6vw, 19px);}
+.button, .proof a, .related a, .content a {display: inline-flex; align-items: center; gap: 8px; font-weight: 680;}
+.button {min-height: 46px; padding: 10px 15px; border-radius: 8px; color: var(--paper); background: var(--accent);}
+.panel {padding: clamp(17px, 3vw, 32px); border: 1px solid #3c6466; border-radius: 14px; color: #eaf7f6; background: #112b36;}
+.panel h2 {margin: 0 0 13px; font-size: clamp(18px, 2.4vw, 27px);}
+.panel ol, .panel ul, .content ul {list-style: none; padding: 0; margin: 0;}
+.panel li {border-top: 1px solid #43616b;}
+.panel li, .panel a {display: flex; align-items: center; gap: 10px;}
+.panel ol li, .panel a {padding: 12px 0;}
+.panel a {width: 100%; justify-content: space-between;}
+.panel svg {color: #a3e9cb; flex: none;}
+.content {padding-block: clamp(28px, 5vw, 62px);}
+.content h2, .proof h2 {margin: 0 0 14px; font-size: clamp(26px, 3.6vw, 45px); letter-spacing: -.04em; line-height: 1.12;}
+.content ul {display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px;}
+.content li {border-top: 2px solid var(--line); padding-top: 14px; font-weight: 650;}
+.content p {margin: 7px 0 0; font-weight: 400;}
+.content a, .proof a, .related a, .label {color: var(--accent);}
+.proof {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding: clamp(19px, 4vw, 36px); border: 1px solid var(--line); border-radius: 14px;}
+.proof h2 {margin: 6px 0;}
+.proof p {max-width: 68ch; margin: 0;}
+.label {font-weight: 680;}
+.related {display: flex; flex-wrap: wrap; gap: 14px 24px; padding-top: 22px;}
+.button svg, .content svg, .related svg {flex: none;}
+@media (max-width: 720px) {
+  .hero, .content ul {grid-template-columns: 1fr;}
+}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .heroInner, .shell {
+    width: min(90%, 1220px);
+    margin-inline: auto;
+  }
+}

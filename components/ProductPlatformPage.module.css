@@ -1,0 +1,67 @@
+.page {--paper:#edf6f5;--edge:#c7dcd9;--accent:#1b625a;color:var(--ink)}
+:global([data-theme="dark"]) .page {--paper:#1d2f2b;--edge:#3d5953;--accent:#ace4ce}
+.inner {width:min(92%,1240px);margin-inline:auto;padding-block:clamp(22px,4vw,62px)}
+.crumb {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;color:var(--muted);font-size:14px}
+.hero {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(24px,5vw,72px);padding:clamp(18px,2.8vw,36px);border-radius:22px;background:radial-gradient(ellipse at 100% 0,var(--edge),transparent 68%),var(--paper)}
+.label {color:var(--accent);font-weight:700;margin:0 0 10px}
+.hero h1 {margin:0;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.055em;font-weight:720;text-wrap:balance}
+.lead,.section p,.integration p,.project p:not(.label) {color:var(--muted);line-height:1.65}
+.lead {font-size:clamp(16px,1.7vw,20px);max-width:65ch}
+.button,.integration a,.project a {display:inline-flex;align-items:center;gap:8px;font-weight:680}
+.button {min-height:44px;padding:10px 14px;border-radius:8px;background:var(--accent);color:var(--paper)}
+.page a:hover {text-decoration:underline}
+.page svg {flex:none}
+.page {--signal:#aee8d8}
+.page[data-product-platform="/products/forex-crm"] {--signal:#a9d5ff}
+.page[data-product-platform="/products/prop-trading-management"] {--signal:#f0dba4}
+.page[data-product-platform="/products/enterprise-saas"] {--signal:#cfc2ff}
+.page[data-product-platform="/products/blockchain-wallet"] {--signal:#9be1e9}
+.preview {min-width:0;padding:clamp(15px,2.8vw,30px);border:1px solid #557487;border-radius:16px;background:radial-gradient(ellipse at top right,#274052,transparent 72%),#102432;color:#ecfbf9;box-shadow:8px 8px 0 #4b8b8940}
+.previewHead {display:flex;align-items:center;gap:11px;margin-bottom:14px;color:var(--signal)}
+.previewHead h2 {font-size:clamp(18px,2vw,24px);margin:3px 0 0;color:#ecfbf9;line-height:1.15}
+.previewHead small,.record small {font-size:12px}
+.steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:0;margin:0 0 12px;list-style:none}
+.steps button {width:100%;height:100%;min-height:44px;padding:6px;border:1px solid #536f81;border-radius:7px;font-size:12px;line-height:1.25;text-align:left}
+.steps button:hover,.steps button[aria-pressed="true"] {border-color:var(--signal);background:#263f4e;color:var(--signal)}
+.record {padding:13px;border:1px solid #476677;border-radius:9px;background:#172e3b}
+.record h3 {margin:5px 0;font-size:18px}
+.record small,.recordDetail {color:var(--signal)}
+.record p {margin:6px 0 0;line-height:1.5}
+.recordDetail {display:flex;align-items:center;gap:7px;font-size:13px}
+.advance {display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:12px;padding:8px 12px;border-radius:7px;background:var(--signal);color:#142a37;font-weight:700;font-size:13px}
+.advance:hover {filter:brightness(1.08)}
+.integration details {padding:12px 0;border-top:1px solid var(--edge)}
+.integration summary {cursor:pointer;font-weight:650}
+.integration a.button {color:var(--paper)}
+@media(prefers-reduced-motion:no-preference) {.record {animation:product-record-in .2s ease-out}@keyframes product-record-in {from {opacity:.7;transform:translateY(3px)}}}
+.art {position:relative;isolation:isolate;justify-self:center;width:clamp(120px,18vw,225px);aspect-ratio:1;transform:rotateX(46deg) rotateZ(-26deg);transform-style:preserve-3d}
+.art span {position:absolute;inset:0;display:grid;place-items:center;border:1px solid #b9f3e9;border-radius:23%;background:linear-gradient(140deg,#285c92,#3d9e8a);box-shadow:0 10px 0 #193a55;color:#efffff}
+.art span:nth-child(2) {transform:translateZ(24px)}
+.art span:nth-child(3) {transform:translateZ(48px);background:linear-gradient(140deg,#489f9b,#28588d)}
+.section {padding-block:clamp(28px,5vw,62px);scroll-margin-top:115px}
+.section h2,.integration h2,.project h2 {margin:0 0 12px;font-size:clamp(24px,3.6vw,43px);letter-spacing:-.04em;line-height:1.13}
+.modules,.catalogue {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.modules article,.catalogue a {padding:clamp(14px,2.4vw,25px);border:1px solid var(--edge);border-radius:12px}
+.modules h3 {margin:0}
+.modules p,.catalogue p {margin:8px 0 0}
+.catalogue {list-style:none;padding:0;margin:0}
+.catalogue a {height:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;color:var(--accent)}
+.catalogue a:hover {background:var(--paper)}
+.catalogue p {grid-column:1/-1}
+.integration,.project {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:clamp(16px,4vw,44px);padding:clamp(18px,4vw,40px);border-radius:15px;background:var(--paper)}
+.integration a,.project a {color:var(--accent)}
+.project {margin-top:20px}
+.project figure {position:relative;margin:0;overflow:hidden;border-radius:12px;border:1px solid var(--edge);background:var(--surface);box-shadow:0 10px 28px rgba(0,0,0,0.06)}
+.project img {display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:800px) {.hero,.integration,.project{grid-template-columns:1fr}.modules,.catalogue{grid-template-columns:repeat(2,minmax(0,1fr))}.art{margin-block:24px}}
+@media(max-width:510px) {.modules,.catalogue{grid-template-columns:1fr}}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    align-content: center;
+    box-sizing: border-box;
+  }
+}

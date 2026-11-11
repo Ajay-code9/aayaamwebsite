@@ -1,0 +1,85 @@
+.page {
+  --accent: #205584;
+  --surface: #edf5fc;
+  --line: #cbdde9;
+  --diagram-ink: #e9f5ff;
+  --diagram-bg: #112a44;
+  --diagram-line: #608aa8;
+  --diagram-accent: #a5d8ff;
+  color: var(--ink);
+}
+.page[data-group="product-engineering"] {
+  --accent: #226753;
+  --surface: #ecf6ef;
+  --line: #caddd1;
+  --diagram-ink: #173c30;
+  --diagram-bg: #e4f3e8;
+  --diagram-line: #8ab3a0;
+  --diagram-accent: #216951;
+}
+:global([data-theme="dark"]) .page {
+  --accent: #9acbf5;
+  --surface: #172735;
+  --line: #375066;
+}
+:global([data-theme="dark"]) .page[data-group="product-engineering"] {
+  --accent: #a0dfbd;
+  --surface: #192b23;
+  --line: #3c584b;
+  --diagram-bg: #19392c;
+  --diagram-ink: #e7f7ed;
+  --diagram-line: #669583;
+  --diagram-accent: #a0dfbd;
+}
+.inner {width: min(90%, 1190px); margin-inline: auto; padding-block: clamp(30px, 5vw, 68px);}
+.breadcrumb {display: flex; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 26px;}
+.breadcrumb a:hover, .related a:hover {text-decoration: underline;}
+.hero {padding:clamp(18px,2.8vw,36px); border-radius: 6px 28px 28px 6px; border-inline-start: 4px solid var(--accent); background: var(--surface);}
+.label {margin: 0; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .06em;}
+.hero h1 {max-width: 23ch; margin: 13px 0 20px; font-size: clamp(28px,3.8vw,52px); line-height: 1.03; letter-spacing: -.06em; font-weight: 720; text-wrap: balance;}
+.intro, .contact {display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap;}
+.intro p, .contact p, .scope dd {margin: 0; color: var(--muted); line-height: 1.65;}
+.intro p {max-width: 65ch; font-size: clamp(16px, 1.6vw, 19px);}
+.button {display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 14px; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent); font-weight: 650;}
+.button:hover {background: var(--accent); color: var(--surface);}
+.body {display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: start; gap: clamp(20px, 6vw, 80px); padding-block: clamp(32px, 6vw, 76px);}
+.page h2 {margin: 0 0 12px; font-size: clamp(25px, 3vw, 43px); line-height: 1.12; letter-spacing: -.045em;}
+.scope dl {margin: 0;}
+.scope dl div {padding-block: 13px; border-bottom: 1px solid var(--line);}
+.scope dt {margin-bottom: 5px; font-size: 18px; font-weight: 680;}
+.example {margin: 0; padding: clamp(18px, 3vw, 36px); border-radius: 18px; color: var(--diagram-ink); background: var(--diagram-bg);}
+.page[data-group="cloud-infrastructure"] .example {
+  background: repeating-linear-gradient(90deg, #ffffff0b 0 1px, transparent 1px 32px), var(--diagram-bg);
+}
+.page[data-group="product-engineering"] .example {
+  border: 1px solid var(--line);
+  box-shadow: 5px 5px 0 var(--surface), 6px 6px 0 var(--line);
+}
+.example .label {display: block; color: var(--diagram-accent);}
+.example figcaption strong {display: block; margin-top: 8px; font-size: 23px; line-height: 1.15;}
+.example ol {margin: 22px 0 0; padding-left: 27px;}
+.example li {padding: 10px 0 10px 5px; border-top: 1px solid var(--diagram-line);}
+.example li::marker {color: var(--diagram-accent); font-weight: 700;}
+.contact {padding-block: 20px; border-block: 1px solid var(--line);}
+.related {display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px;}
+.related a {display: inline-flex; align-items: center; gap: 7px; min-height: 36px; color: var(--accent); font-weight: 650;}
+.related svg, .button svg {flex: none;}
+@media (max-width: 700px) {
+  .body {grid-template-columns: 1fr;}
+}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .heroInner, .shell {
+    width: min(90%, 1220px);
+    margin-inline: auto;
+  }
+}

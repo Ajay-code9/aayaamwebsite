@@ -1,0 +1,325 @@
+.page {
+  --accent: #1b625c;
+  --surface: #ecf7f4;
+  --edge: #c8dfda;
+  color: var(--ink);
+}
+.page:is([data-family="forex-brokerage"], [data-family="prop-trading"]) {
+  --accent: #225985;
+  --surface: #edf5fc;
+  --edge: #cbddeb;
+}
+.page:is([data-family="blockchain"], [data-family="ai-business"]) {
+  --accent: #4b4e8e;
+  --surface: #f1f0fa;
+  --edge: #d8d6ea;
+}
+:global([data-theme="dark"]) .page {
+  --accent: #a1e6c3;
+  --surface: #1b2d27;
+  --edge: #3d584d;
+}
+:global([data-theme="dark"]) .page:is([data-family="forex-brokerage"], [data-family="prop-trading"]) {
+  --accent: #a8d7fa;
+  --surface: #1c2b39;
+  --edge: #40576a;
+}
+:global([data-theme="dark"]) .page:is([data-family="blockchain"], [data-family="ai-business"]) {
+  --accent: #c7c8fa;
+  --surface: #27283e;
+  --edge: #515371;
+}
+.inner {width: min(90%, 1200px); margin-inline: auto; padding: clamp(26px, 5vw, 62px) 0 clamp(42px, 7vw, 90px);}
+.breadcrumb {display: flex; flex-wrap: wrap; gap: 7px 10px; margin-bottom: 18px; color: var(--muted); font-size: 14px;}
+.page a:hover {text-decoration: underline;}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(140px, .36fr);
+  align-items: center;
+  gap: 28px;
+  padding:clamp(18px,2.8vw,36px);
+  background: var(--surface);
+  border: 1px solid var(--edge);
+  border-radius: 24px;
+}
+.label {margin: 0; color: var(--accent); font-size: 14px; font-weight: 700;}
+.hero h1 {max-width: 20ch; margin: 12px 0 18px; font-size: clamp(28px,3.8vw,52px); font-weight: 720; letter-spacing: -.06em; line-height: 1.04; text-wrap: balance;}
+.lead, .directory p, .project p:not(.label) {color: var(--muted); line-height: 1.65;}
+.lead {max-width: 65ch; margin: 0 0 22px; font-size: clamp(16px, 1.6vw, 19px);}
+.button {display: inline-flex; align-items: center; gap: 9px; min-height: 46px; padding: 10px 14px; border-radius: 8px; background: var(--accent); color: var(--surface); font-weight: 650;}
+.emblem {
+  width: min(100%, 230px);
+  aspect-ratio: 1;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  border-radius: 50%;
+  border: 1px solid var(--edge);
+  background: repeating-radial-gradient(circle, transparent 0 23px, var(--edge) 24px 25px);
+}
+.emblem svg {width: 45%; height: 45%; padding: 10%; box-sizing: content-box; border-radius: 50%; background: var(--surface); border: 1px solid var(--edge);}
+.scope, .directory {margin-top: clamp(28px, 5vw, 60px);}
+.page h2 {margin: 0 0 14px; font-size: clamp(25px, 3vw, 42px); line-height: 1.12; letter-spacing: -.04em;}
+.scope ul, .directory ul {padding: 0; margin: 0; list-style: none;}
+.scope ul {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;}
+.scope li {display: flex; align-items: center; gap: 10px; padding: 14px; border: 1px solid var(--edge); border-radius: 10px; font-weight: 600;}
+.scope svg, .directory svg, .project svg, .button svg {flex: none;}
+.scope svg, .directory svg, .project a {color: var(--accent);}
+.directory ul {border-top: 1px solid var(--edge);}
+.directory a {display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--edge);}
+.directory strong {font-size: clamp(17px, 2vw, 23px);}
+.directory p {margin: 5px 0 0; max-width: 75ch;}
+.project {display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 28px; padding: clamp(18px, 4vw, 36px); background: var(--surface); border-radius: 15px;}
+.project h2 {margin: 7px 0;}
+.project p {margin: 0; max-width: 70ch;}
+.project a {display: inline-flex; align-items: center; gap: 8px; font-weight: 650;}
+.directoryHero {grid-template-columns:1fr}
+.familyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 22px;
+  margin-top: 32px;
+}
+.familyCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 2.6vw, 30px);
+  background: linear-gradient(165deg, #ffffff 0%, #f6fbf9 50%, #eff7f4 100%);
+  border: 1px solid #d4e7e0;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(16, 28, 53, 0.04), 0 1px 3px rgba(16, 28, 53, 0.02);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease;
+  overflow: hidden;
+}
+.familyCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1b625c, #2f9479 60%, transparent);
+  opacity: 0.85;
+  transition: opacity 0.25s ease, height 0.25s ease;
+}
+.familyCard:hover {
+  transform: translateY(-4px);
+  border-color: #9acdc0;
+  box-shadow: 0 16px 36px rgba(16, 28, 53, 0.08), 0 4px 12px rgba(27, 98, 92, 0.08);
+}
+.familyCard:hover::before {
+  opacity: 1;
+  height: 4px;
+}
+.familyCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.familyCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e3f4ee 0%, #d1ede2 100%);
+  color: #175e53;
+  border: 1px solid #c0e3d5;
+  box-shadow: 0 2px 8px rgba(23, 94, 83, 0.08);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.familyCard:hover .familyCardIcon {
+  transform: scale(1.06) rotate(-2deg);
+  background: linear-gradient(135deg, #d3efe4 0%, #bce6d5 100%);
+}
+.familyCard h2 {
+  font-size: clamp(19px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding-top: 4px;
+  color: #132738;
+}
+.familyCardTitleLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #132738;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+.familyCardTitleLink:hover {
+  color: #1b625c;
+}
+.familyCardTitleArrow {
+  opacity: 0.5;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+.familyCardTitleLink:hover .familyCardTitleArrow {
+  opacity: 1;
+  color: #1b625c;
+  transform: translate(2px, -2px);
+}
+.familyCardDesc {
+  color: #4a6375;
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0 0 18px 0;
+  min-height: 42px;
+}
+.familyCardList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+  padding: 12px 0 0 0;
+  list-style: none;
+  border-top: 1px solid #ddecfa99;
+}
+.familyCardItem {
+  margin: 0;
+  padding: 0;
+}
+.familyCardLink {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid transparent;
+  color: #214056;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.4;
+  text-decoration: none !important;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.familyCardLinkDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7ca89c;
+  flex-shrink: 0;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+.familyCardLinkText {
+  flex: 1;
+  min-width: 0;
+}
+.familyCardArrow {
+  opacity: 0;
+  flex-shrink: 0;
+  color: #1b625c;
+  transform: translateX(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.familyCardLink:hover,
+.familyCardLink:focus-visible {
+  background: #ffffff;
+  color: #114c44;
+  border-color: #c7e3d8;
+  transform: translateX(3px);
+  box-shadow: 0 2px 8px rgba(16, 28, 53, 0.04);
+}
+.familyCardLink:hover .familyCardLinkDot,
+.familyCardLink:focus-visible .familyCardLinkDot {
+  background: #1b625c;
+  transform: scale(1.4);
+}
+.familyCardLink:hover .familyCardArrow,
+.familyCardLink:focus-visible .familyCardArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+:global([data-theme="dark"]) .familyCard {
+  background: linear-gradient(165deg, #152229 0%, #101c22 100%);
+  border-color: #233842;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+:global([data-theme="dark"]) .familyCard:hover {
+  border-color: #386054;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(47, 148, 121, 0.15);
+}
+:global([data-theme="dark"]) .familyCardIcon {
+  background: linear-gradient(135deg, #1a3832 0%, #152a26 100%);
+  color: #72e0bd;
+  border-color: #2b554b;
+}
+:global([data-theme="dark"]) .familyCard h2,
+:global([data-theme="dark"]) .familyCardTitleLink {
+  color: #e5f1ec;
+}
+:global([data-theme="dark"]) .familyCardTitleLink:hover {
+  color: #72e0bd;
+}
+:global([data-theme="dark"]) .familyCardDesc {
+  color: #8da3af;
+}
+:global([data-theme="dark"]) .familyCardList {
+  border-top-color: #223740;
+}
+:global([data-theme="dark"]) .familyCardLink {
+  background: rgba(255, 255, 255, 0.03);
+  color: #c5d7e0;
+}
+:global([data-theme="dark"]) .familyCardLinkDot {
+  background: #476a60;
+}
+:global([data-theme="dark"]) .familyCardLink:hover,
+:global([data-theme="dark"]) .familyCardLink:focus-visible {
+  background: rgba(255, 255, 255, 0.07);
+  color: #8cf0cc;
+  border-color: #386054;
+}
+:global([data-theme="dark"]) .familyCardLink:hover .familyCardLinkDot,
+:global([data-theme="dark"]) .familyCardLink:focus-visible .familyCardLinkDot {
+  background: #72e0bd;
+}
+:global([data-theme="dark"]) .familyCardArrow {
+  color: #72e0bd;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .familyCard,
+  .familyCardIcon,
+  .familyCardLink,
+  .familyCardTitleArrow,
+  .familyCardArrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 660px) {
+  .hero, .scope ul {grid-template-columns: 1fr;}
+  .emblem {display: none;}
+  .familyGrid {grid-template-columns: 1fr; gap: 16px;}
+  .familyCardDesc {min-height: 0;}
+}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .heroInner, .shell {
+    width: min(90%, 1220px);
+    margin-inline: auto;
+  }
+}

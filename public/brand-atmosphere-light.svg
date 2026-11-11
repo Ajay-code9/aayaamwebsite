@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" fill="none">
+<defs>
+ <linearGradient id="blue" x1="1580" y1="80" x2="880" y2="1060" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".25" stop-color="#a4b9e9"/><stop offset=".5" stop-color="#3858b2"/><stop offset=".64" stop-color="#e4edff"/><stop offset=".82" stop-color="#b7c9e9"/><stop offset="1" stop-color="#fff"/></linearGradient>
+ <linearGradient id="green" x1="990" y1="80" x2="1700" y2="1040" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".25" stop-color="#e0f1de"/><stop offset=".5" stop-color="#55b75c"/><stop offset=".66" stop-color="#eef8f0"/><stop offset=".82" stop-color="#c8e5ce"/><stop offset="1" stop-color="#fff"/></linearGradient>
+ <linearGradient id="edge" x1="1500" y1="0" x2="900" y2="1100" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".45" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#bccce4" stop-opacity="0"/></linearGradient>
+ <linearGradient id="fade"><stop offset=".25" stop-color="#000"/><stop offset=".51" stop-color="#fff"/></linearGradient>
+ <mask id="right"><rect width="1800" height="1100" fill="url(#fade)"/></mask>
+ <filter id="soft"><feGaussianBlur stdDeviation="22"/></filter>
+ <path id="ribbonBlue" d="M1850 -180C1220 -190 1670 230 1260 460S780 910 1840 1190"/>
+ <path id="ribbonGreen" d="M1720 -170C800 30 940 300 1200 520S1800 870 1360 1210"/>
+</defs>
+<g mask="url(#right)">
+ <use href="#ribbonBlue" stroke="url(#blue)" stroke-width="165" opacity=".55"/>
+ <use href="#ribbonBlue" stroke="url(#edge)" stroke-width="2" transform="translate(-45 -18)" opacity=".85"/>
+ <use href="#ribbonBlue" stroke="#8ab99a" stroke-width="38" opacity=".12" transform="translate(-22 -8)"/>
+ <use href="#ribbonBlue" stroke="#fff" stroke-width="24" opacity=".18" transform="translate(35 10)"/>
+ <use href="#ribbonGreen" stroke="url(#green)" stroke-width="115" opacity=".6"/>
+ <use href="#ribbonGreen" stroke="url(#edge)" stroke-width="2" transform="translate(30 -12)" opacity=".95"/>
+ <use href="#ribbonGreen" stroke="#fff" stroke-width="18" opacity=".3" transform="translate(-20 -5)"/>
+</g>
+</svg>
+
+

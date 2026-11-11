@@ -1,0 +1,43 @@
+.page {--surface:#edf5f2;--edge:#cbded9;--accent:#1d6759;color:var(--ink)}
+:global([data-theme="dark"]) .page {--surface:#1b3029;--edge:#406157;--accent:#a4e6ca}
+.inner {width:min(90%,1200px);margin:auto;padding-block:clamp(24px,5vw,72px)}
+.crumb {display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+.hero {display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);align-items:center;gap:clamp(24px,6vw,80px);padding-block:clamp(16px,2.5vw,36px)}
+.label {color:var(--accent);font-weight:700;margin:0 0 12px}
+.hero h1 {margin:0;font-size:clamp(28px,3.8vw,52px);font-weight:720;line-height:1.03;letter-spacing:-.06em;text-wrap:balance}
+.lead,.page p:not(.label) {color:var(--muted);line-height:1.65}
+.lead {max-width:65ch;font-size:clamp(16px,1.6vw,20px)}
+.button,.scenario a {display:inline-flex;align-items:center;gap:8px;font-weight:680}
+.button {padding:11px 15px;border-radius:8px;background:var(--accent);color:var(--surface)}
+.workspace {margin:0;padding:clamp(18px,3vw,32px);border-radius:15px;background:linear-gradient(145deg,#14283a,#183c37);color:#e9fff7;box-shadow:8px 8px 0 var(--surface),9px 9px 0 var(--edge)}
+.workspace figcaption,.workspace li {display:flex;align-items:center;gap:10px}
+.workspace figcaption {color:#a4e6ca;font-weight:680}
+.workspace ol,.scope ul,.directory ul {margin:0;padding:0;list-style:none}
+.workspace ol {margin-top:16px}
+.workspace li {border-top:1px solid #55766c;padding:12px 0}
+.workspace svg,.directory svg,.button svg {flex:none}
+.workspace li svg {color:#a4e6ca}
+.page h2 {font-size:clamp(24px,3.4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 14px}
+.scenario {padding:clamp(20px,4vw,42px);background:var(--surface);border-radius:16px}
+.scenario p {max-width:77ch;margin:0}
+.scenario a {margin-top:14px;color:var(--accent)}
+.scope,.directory,.faq {margin-block:clamp(30px,6vw,64px)}
+.scope ul,.directory ul {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,225px),1fr));gap:12px}
+.scope li,.directory li {padding:16px;border:1px solid var(--edge);border-radius:10px}
+.directory a {display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:700;color:var(--accent)}
+.directory p,.faq p {margin:8px 0 0}
+.faq {display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:16px}
+.faq details {padding:14px 0;border-top:1px solid var(--edge)}
+.faq summary {font-weight:650;cursor:pointer}
+.page a:hover {text-decoration:underline}
+@media(max-width:740px) {.hero,.faq{grid-template-columns:1fr}}
+
+/* 100vh hero rule */
+@media (min-width: 741px) {
+  .hero {
+    min-height: calc(100svh - 96px);
+    width: 100%;
+    align-content: center;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,4 @@
+export const company={email:'support@aayaamx.com',phone:'+91 90416 71006',phoneHref:'+919041671006',address:'A-1108, Privilon, B/h. Iscon Temple, Ambli-Bopal Road, Bodakdev, Ahmedabad-380054, Gujarat',hours:'Mon – Fri: 10:00 AM – 7:00 PM (IST)',closed:'Sat – Sun: Closed'};
+export const disclaimer='AayaamX is a technology development and consulting company. Our role is strictly limited to Software Development, technical architecture, and strategic implementation services.';
+export const legalInformation='All information provided on our website, marketing materials, proposals, and communications is for general informational purposes and does not constitute legal, tax, or financial advice.';
+export const riskWarning='Software delivery carries operational and timeline risks. Scope, integrations, third-party dependencies, and production environments can affect delivery schedules and outcomes.';
