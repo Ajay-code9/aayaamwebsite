@@ -106,7 +106,7 @@ function WorkOverview() {
       {workSteps.map(({title,icon:Icon,detail},index) => <li key={title} className="work-overview-step reveal-block" style={{'--step-delay':index * 1.45 + 's'} as React.CSSProperties}>
         <div className="work-overview-copy"><h3>{title}</h3><p>{detail}</p></div>
         <div className="work-overview-icon">
-          <Icon size={26} strokeWidth={1.7}/>
+          <Icon size={30} strokeWidth={2} className="work-step-svg"/>
           <span aria-hidden="true" className="work-overview-badge">0{index + 1}</span>
           <span className="work-overview-pulse" aria-hidden="true"/>
         </div>

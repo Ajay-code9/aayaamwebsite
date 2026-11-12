@@ -135,7 +135,13 @@
     border-color: #24353c;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 1px 1px rgba(85, 183, 92, 0.15);
   }
-  [data-theme="dark"] .work-overview-icon {
+  [data-theme="dark"] .work-step-svg {
+  color: #5fe0b0;
+}
+[data-theme="dark"] .work-overview-step:hover .work-step-svg {
+  color: #8bf1cb;
+}
+[data-theme="dark"] .work-overview-icon {
     background: linear-gradient(145deg, #1e2c31, #141f23);
     border-color: rgba(85, 183, 92, 0.45);
     color: #5fe0b0;

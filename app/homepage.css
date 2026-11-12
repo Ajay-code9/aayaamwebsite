@@ -506,6 +506,30 @@
   margin:0 auto 19px;border:1px solid #c6dce0;border-radius:50%;
   background:linear-gradient(140deg,#fff,#e1f0ef);color:#20477c;
 }
+.work-step-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  color: #1a4f78;
+  z-index: 2;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.work-overview-step:hover .work-step-svg {
+  transform: translate(-50%, -50%) scale(1.1);
+  color: #101c82;
+}
+.work-overview-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(85, 183, 92, 0.5);
+  pointer-events: none;
+  width: auto;
+  height: auto;
+}
 .work-overview-icon .work-overview-badge {
   position: absolute;
   top: -5px;
