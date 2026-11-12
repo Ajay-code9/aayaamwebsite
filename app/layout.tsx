@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import ScrollToTop from '@/components/ScrollToTop';
 import './globals.css';
 import './homepage.css';
 import './theme.css';
@@ -12,7 +13,10 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
       <script dangerouslySetInnerHTML={{__html:restoreTheme}}/>
       <link rel="preload" href="/case-studies/succeed-capital-fx-overview.webp" as="image" type="image/webp"/>
     </head>
-    <body>{children}</body>
+    <body>
+      <ScrollToTop/>
+      {children}
+    </body>
   </html>;
 }
 
