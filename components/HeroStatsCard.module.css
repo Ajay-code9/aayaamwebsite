@@ -131,34 +131,183 @@
   z-index: 2;
 }
 
+.iconCircleWrapper {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
+
+/* Concentric Sonar Waves radiating outward */
+.sonarWave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 58px;
+  height: 58px;
+  margin-top: -29px;
+  margin-left: -29px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(85, 183, 92, 0.7);
+  box-shadow: 0 0 14px rgba(95, 224, 176, 0.45);
+  pointer-events: none;
+  opacity: 0;
+  animation: sonarRipple 3.6s cubic-bezier(0.1, 0.4, 0.2, 1) infinite;
+}
+
+.sonarWave1 {
+  animation-delay: 0s;
+}
+
+.sonarWave2 {
+  animation-delay: 1.2s;
+}
+
+.sonarWave3 {
+  animation-delay: 2.4s;
+}
+
+@keyframes sonarRipple {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.95;
+    border-color: rgba(95, 224, 176, 0.85);
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+    border-color: rgba(85, 183, 92, 0);
+  }
+}
+
 .iconCircle {
+  position: relative;
   display: grid;
   place-items: center;
   width: 58px;
   height: 58px;
   border-radius: 17px;
-  background: linear-gradient(135deg, rgba(85, 183, 92, 0.18), rgba(16, 28, 130, 0.28));
-  border: 1px solid rgba(85, 183, 92, 0.38);
+  background: linear-gradient(135deg, rgba(85, 183, 92, 0.2), rgba(16, 28, 130, 0.32));
+  border: 1px solid rgba(85, 183, 92, 0.45);
   color: #5fe0b0;
-  box-shadow: 0 0 18px rgba(85, 183, 92, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  flex-shrink: 0;
+  box-shadow: 
+    0 0 22px rgba(85, 183, 92, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.targetIcon {
-  animation: targetRotate 12s linear infinite;
+/* Conical Radar Sweep effect */
+.radarSweep {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    rgba(85, 183, 92, 0.12) 320deg,
+    rgba(95, 224, 176, 0.45) 360deg
+  );
+  animation: radarScan 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes targetRotate {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
+@keyframes radarScan {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Target SVG icon and rings animation */
+.targetIconSvg {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  z-index: 2;
+  color: #5fe0b0;
+  filter: drop-shadow(0 0 6px rgba(95, 224, 176, 0.6));
+}
+
+.radarRingOuter {
+  transform-origin: center;
+  animation: ringPulseOuter 4s ease-in-out infinite alternate;
+}
+
+.radarRingMid {
+  transform-origin: center;
+  animation: ringPulseMid 3s ease-in-out infinite alternate;
+}
+
+.radarRingInner {
+  transform-origin: center;
+  animation: ringPulseInner 2s ease-in-out infinite alternate;
+}
+
+.radarDot {
+  transform-origin: center;
+  animation: dotPing 1.8s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 4px #5fe0b0);
+}
+
+@keyframes ringPulseOuter {
+  0% { transform: scale(0.97); opacity: 0.7; }
+  100% { transform: scale(1.03); opacity: 1; }
+}
+
+@keyframes ringPulseMid {
+  0% { transform: scale(1.04); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 1; }
+}
+
+@keyframes ringPulseInner {
+  0% { transform: scale(0.92); opacity: 0.75; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes dotPing {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+:global(:root:not([data-theme="dark"])) .iconCircleWrapper .sonarWave {
+  border-color: rgba(85, 183, 92, 0.55);
+  box-shadow: 0 0 10px rgba(85, 183, 92, 0.25);
 }
 
 :global(:root:not([data-theme="dark"])) .iconCircle {
   background: linear-gradient(135deg, #eaf6ee, #edf3fa);
   color: #1a6442;
-  border-color: rgba(85, 183, 92, 0.35);
-  box-shadow: 0 4px 14px rgba(85, 183, 92, 0.12);
+  border-color: rgba(85, 183, 92, 0.4);
+  box-shadow: 0 4px 16px rgba(85, 183, 92, 0.16);
+}
+
+:global(:root:not([data-theme="dark"])) .radarSweep {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    rgba(85, 183, 92, 0.15) 320deg,
+    rgba(26, 100, 66, 0.35) 360deg
+  );
+}
+
+:global(:root:not([data-theme="dark"])) .targetIconSvg {
+  color: #1a6442;
+  filter: drop-shadow(0 1px 3px rgba(26, 100, 66, 0.3));
 }
 
 .headerText {

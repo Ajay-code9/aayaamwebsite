@@ -1,6 +1,6 @@
 'use client';
 
-import { Target, Crown } from 'lucide-react';
+import { Crown } from 'lucide-react';
 import useCountUp from '@/hooks/useCountUp';
 import styles from './HeroStatsCard.module.css';
 
@@ -16,10 +16,41 @@ export default function HeroStatsCard() {
         <div className={styles.ambientGlowSecondary} aria-hidden="true" />
         <div className={styles.shimmerRay} aria-hidden="true" />
 
-        {/* Top: 120+ Projects Delivered with Target Icon */}
+        {/* Top: 120+ Projects Delivered with Radar / Sonar Pulse Icon */}
         <div className={styles.header}>
-          <div className={styles.iconCircle} aria-hidden="true">
-            <Target size={26} strokeWidth={2.2} className={styles.targetIcon} />
+          <div className={styles.iconCircleWrapper} aria-hidden="true">
+            {/* Concentric Sonar Pulse Waves radiating outward */}
+            <span className={`${styles.sonarWave} ${styles.sonarWave1}`} />
+            <span className={`${styles.sonarWave} ${styles.sonarWave2}`} />
+            <span className={`${styles.sonarWave} ${styles.sonarWave3}`} />
+            
+            <div className={styles.iconCircle}>
+              {/* Rotating conical radar beam sweep */}
+              <div className={styles.radarSweep} />
+              
+              {/* Interactive Target / Sonar SVG */}
+              <svg 
+                className={styles.targetIconSvg} 
+                viewBox="0 0 48 48" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Outer ring */}
+                <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="2.2" className={styles.radarRingOuter} />
+                {/* Middle ring */}
+                <circle cx="24" cy="24" r="13" stroke="currentColor" strokeWidth="2.2" className={styles.radarRingMid} />
+                {/* Inner target circle */}
+                <circle cx="24" cy="24" r="6" stroke="currentColor" strokeWidth="2.2" className={styles.radarRingInner} />
+                {/* Center glowing ping dot */}
+                <circle cx="24" cy="24" r="2.8" fill="currentColor" className={styles.radarDot} />
+                
+                {/* Crosshairs */}
+                <line x1="24" y1="2" x2="24" y2="7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.6" />
+                <line x1="24" y1="41" x2="24" y2="46" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.6" />
+                <line x1="2" y1="24" x2="7" y2="24" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.6" />
+                <line x1="41" y1="24" x2="46" y2="24" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.6" />
+              </svg>
+            </div>
           </div>
           <div className={styles.headerText}>
             <div className={styles.bigNumberRow}>
