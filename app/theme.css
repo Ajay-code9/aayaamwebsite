@@ -1006,7 +1006,6 @@
 
 @media (max-width: 640px) {
   .complete-navigation .talk-button {display:none}
-  .complete-navigation .navbar-theme-toggle {margin-inline-start:auto}
   .contact-inner {padding:clamp(18px,5vw,30px)}
   .contact-inner h2 {padding-inline-end:28px}
   .contact-dialog {max-height:calc(100dvh - 24px)}
