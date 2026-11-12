@@ -10,6 +10,7 @@ import HeroStatsCard from './HeroStatsCard';
 import CursorGlow from './CursorGlow';
 import MarqueeStats from './MarqueeStats';
 import NetflixIntro from './NetflixIntro';
+import DynamicHeadline from './DynamicHeadline';
 
 // "Software That Powers Your Growth."
 // Plain words animate first; em words animate in accent green
@@ -28,22 +29,7 @@ export default function Homepage() {
       <section className="product-hero" aria-labelledby="product-hero-title">
         <div className="product-hero-inner">
           <div className="product-hero-copy">
-            <h1 id="product-hero-title" className="kinetic-headline">
-              {HEADLINE_PLAIN.map((word, i) => (
-                <span key={word} style={{ animationDelay: `${i * 0.08}s` }}>{word} </span>
-              ))}
-              <em>
-                {HEADLINE_EM.map((word, i) => (
-                  <span
-                    key={word}
-                    className="kinetic-em"
-                    style={{ animationDelay: `${(HEADLINE_PLAIN.length + i) * 0.08}s` }}
-                  >
-                    {word}{i < HEADLINE_EM.length - 1 ? ' ' : ''}
-                  </span>
-                ))}
-              </em>
-            </h1>
+            <DynamicHeadline />
             <p className="product-hero-intro">AayaamX builds AI Applications, Trading Platforms, Blockchain Solutions and Custom Enterprise Software. We take your product from planning through launch and ongoing support.</p>
             <div className="product-hero-actions">
               <button type="button" onClick={() => setContact(true)}>Request a Technical Consultation <ArrowUpRight size={16} aria-hidden="true"/></button>
