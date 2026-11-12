@@ -506,10 +506,21 @@
   margin:0 auto 19px;border:1px solid #c6dce0;border-radius:50%;
   background:linear-gradient(140deg,#fff,#e1f0ef);color:#20477c;
 }
-.work-overview-icon > span {
-  position:absolute;top:-5px;right:-7px;display:grid;place-items:center;
-  width:29px;height:29px;border-radius:50%;border:2px solid #f2faf9;
-  background:linear-gradient(130deg,#234b88,#2f8c69);color:white;font-size:11px;font-weight:750;
+.work-overview-icon .work-overview-badge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  border: 2px solid #f2faf9;
+  background: linear-gradient(130deg, #234b88, #2f8c69);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 750;
+  z-index: 5;
 }
 .work-overview .work-overview-step h3 {font-size:clamp(22px,2.2vw,30px)}
 .work-overview-step p {max-width:315px;margin:13px auto 0;font-size:15px}
@@ -604,6 +615,7 @@
   .work-overview-arrow {display:none}
 
   /* Enhanced Mobile Card Steps */
+  .work-overview-step .work-overview-icon { order: -1; }
   .work-overview-step {
     position: relative;
     display: flex;
@@ -637,14 +649,23 @@
   }
 
   /* Number Badge on Step Icon */
-  .work-overview-icon > span:not(.work-overview-pulse) {
-    top: -6px;
-    right: -6px;
+  .work-overview-icon .work-overview-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 27px;
     height: 27px;
     background: linear-gradient(135deg, #101c82, #1b7348);
     border: 2px solid #ffffff;
-    box-shadow: 0 2px 8px rgba(16, 28, 130, 0.25);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 750;
+    box-shadow: 0 2px 8px rgba(16, 28, 130, 0.3);
+    z-index: 10;
   }
 
   /* Pulse wave behind icon */

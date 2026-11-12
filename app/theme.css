@@ -141,7 +141,7 @@
     color: #5fe0b0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-  [data-theme="dark"] .work-overview-icon > span:not(.work-overview-pulse) {
+  [data-theme="dark"] .work-overview-icon .work-overview-badge {
     background: linear-gradient(135deg, #101c82, #248053);
     border-color: #1a262a;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
