@@ -216,9 +216,28 @@
 .capability-audience strong {color:#216850;font-size:11px}
 @media(max-width:850px) {.ecosystem-map {grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px) {
-  .ecosystem-map {grid-template-columns:minmax(0,1fr)}
+  .ecosystem-map {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-bottom: 24px;
+  }
 
-  .ecosystem-card {min-height:230px}
+  /* Stacking Sticky Cards effect */
+  .ecosystem-card {
+    position: sticky;
+    top: calc(90px + var(--card-index, 0) * 16px);
+    z-index: calc(10 + var(--card-index, 0));
+    min-height: auto;
+    margin-bottom: 28px;
+    box-shadow: 
+      0 -4px 16px rgba(0, 0, 0, 0.08),
+      0 12px 32px rgba(16, 28, 130, 0.12);
+    transform-origin: center top;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
   .capability-visual {min-height:148px}
 }
 .tech-stack {margin:clamp(48px,7vw,96px) auto 0;padding-bottom:clamp(10px,2vw,28px);text-align:center}

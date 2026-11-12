@@ -33,7 +33,11 @@ function CapabilityCard({index,href}:{index:number;href:string}) {
   const [title,description,audience] = capabilityCopy[index];
   const Icon = capabilityIcons[index];
 
-  return <article className="ecosystem-card reveal-block" data-capability={index}>
+  return <article 
+    className="ecosystem-card reveal-block" 
+    data-capability={index}
+    style={{ '--card-index': index } as React.CSSProperties}
+  >
     <div className="capability-top-bar">
       <span className="capability-category-badge" aria-hidden="true">
         <Icon size={16} strokeWidth={2}/>

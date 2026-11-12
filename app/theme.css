@@ -474,6 +474,15 @@
   opacity: 1;
   filter: contrast(1.08) saturate(1.15);
 }
+@media(max-width:560px) {
+  [data-theme="dark"] .ecosystem-card {
+    box-shadow: 
+      0 -4px 18px rgba(0, 0, 0, 0.4),
+      0 12px 35px rgba(0, 0, 0, 0.7),
+      0 0 1px 1px rgba(85, 183, 92, 0.2);
+  }
+}
+
 @media(min-width:851px) {
   [data-theme="dark"] .ecosystem-card[data-capability="4"] {
     display: grid;
