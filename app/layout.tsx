@@ -5,7 +5,15 @@ import './globals.css';
 import './homepage.css';
 import './theme.css';
 const geistSans = localFont({src:'./fonts/geist-sans-latin.woff2',weight:'100 900',variable:'--geist-sans',display:'swap'});
-export const metadata: Metadata = { title: 'AayaamX Technologies | Engineering What’s Next', description: 'Intelligent digital ecosystems across AI, Fintech, Blockchain and Enterprise Software.' };
+export const metadata: Metadata = { 
+  title: 'AayaamX Technologies | Engineering What’s Next', 
+  description: 'Intelligent digital ecosystems across AI, Fintech, Blockchain and Enterprise Software.',
+  icons: {
+    icon: '/fav-icon.png',
+    shortcut: '/fav-icon.png',
+    apple: '/fav-icon.png',
+  },
+};
 const restoreTheme = "try{var t=localStorage.getItem('aayaamx-theme');if(t==='light'){document.documentElement.dataset.theme='light';}else{document.documentElement.dataset.theme='dark';}}catch{document.documentElement.dataset.theme='dark';}";
 export default function RootLayout({children}:{children:React.ReactNode}) {
   return <html lang="en" className={geistSans.variable} data-theme="dark" suppressHydrationWarning>
