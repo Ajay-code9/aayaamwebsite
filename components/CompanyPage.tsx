@@ -55,7 +55,7 @@ export default function CompanyPage() {
               <p className={styles.label}>{about.title}</p>
               <h1 id="about-title">{about.headline}</h1>
               <p>{about.intro}</p>
-              <div className={styles.action}><PageLink href="/company#contact">Discuss Your Project</PageLink>
+              <div className={styles.action}><PageLink href="/company#contact">Share Your Project Brief</PageLink>
                 <a className={styles.heroJump} href="#our-story">See Our Work <ArrowDown size={16} aria-hidden="true"/></a></div>
             </div>
             <div className={styles.heroPanel}>

@@ -75,7 +75,7 @@ export default function BrokerageSolutionPage({ data }: { data: SolutionPageData
           <section className={styles.contact} aria-labelledby="brokerage-contact">
             <h2 id="brokerage-contact">What to Bring to the First Call</h2>
             <p>{topic?.brief ?? 'Share what you want to improve, the tools you use today and which teams need access. We can use that to define the first release.'}</p>
-            <Link href="/company#contact">Discuss Your Project <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link href="/company#contact">Discuss Your Brokerage Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </section>
         </div>
 

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import SiteFooter from '@/components/SiteFooter';
-import { caseStudies, caseStudyMedia, succeedCapitalPortalFeatures } from '@/lib/portfolio';
+import { caseStudies, caseStudyDeliveryFacts, caseStudyMedia, succeedCapitalPortalFeatures } from '@/lib/portfolio';
 import styles from './page.module.css';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -42,10 +42,20 @@ export default async function CaseStudyPage({ params }: Props) {
         <section aria-labelledby="case-study-scope" className={styles.scope}>
           <h2 id="case-study-scope">What We Built</h2>
           <ul>{project.scope.map(item => <li key={item}>{item}</li>)}</ul>
-          <dl><dt>{project.architecture[1]}</dt><dd>{project.architecture[0]}</dd></dl>
           <Link href="/company#contact" className="home-text-link">Discuss a Similar Project <ArrowUpRight size={16} aria-hidden="true"/></Link>
         </section>
       </div>
+      <section className={styles.gallery} aria-labelledby="case-study-delivery">
+        <h2 id="case-study-delivery">Delivery at a Glance</h2>
+        <dl className={styles.deliveryFacts}>
+          {[project.architecture, ...caseStudyDeliveryFacts[project.slug]].map(([label, detail]) => (
+            <div key={label} className={styles.scope}>
+              <dt>{label}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
       {project.slug === 'succeed-capital-fx' && <section className={styles.gallery} aria-labelledby="brokerage-portal-features">
         <h2 id="brokerage-portal-features">How the Client Portal Works</h2>
         <div className={styles.featureGrid}>

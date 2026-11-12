@@ -74,7 +74,7 @@ export default function SolutionHub({ data }: { data: SolutionPageData }) {
 
         <section className={styles.cta} aria-labelledby="solution-contact">
           <div><h2 id="solution-contact">Start With One Workflow</h2><p>{hub.brief}</p></div>
-          <Link className={styles.button} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+          <Link className={styles.button} href="/company#contact">Share Your Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
         </section>
       </div>
     </main>

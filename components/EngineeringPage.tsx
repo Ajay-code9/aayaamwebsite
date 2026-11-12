@@ -92,7 +92,7 @@ export default function EngineeringPage({data}: {data:EngineeringPageData}) {
       </section>
       <section className={styles.cta} aria-labelledby="engineering-cta">
         <div><p className={styles.eyebrow}>START A CONVERSATION</p><h2 id="engineering-cta">What Do You Want to Build?</h2><p>{data.scope}</p></div>
-        <Link className={styles.primary} href="/company#contact">Let’s Talk <ArrowUpRight size={17}/></Link>
+        <Link className={styles.primary} href="/company#contact">Share Your Project Brief <ArrowUpRight size={17}/></Link>
       </section>
     </main>
     <SiteFooter/>

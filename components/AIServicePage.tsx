@@ -46,7 +46,7 @@ export default function AIServicePage({ service }: { service: AIService }) {
 
       <section className={styles.contact} aria-labelledby="ai-contact-title">
         <div><h2 id="ai-contact-title">Tell Us Where You Want to Start.</h2><p>{service.brief}</p></div>
-        <Link className={styles.primary} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+        <Link className={styles.primary} href="/company#contact">Share Your AI Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
       </section>
 
       <nav className={styles.related} aria-label="Related AI services">

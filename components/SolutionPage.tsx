@@ -36,7 +36,7 @@ export default function SolutionPage({ data }: { data: SolutionPageData }) {
             {link ? <Link className={styles.label} href={group.href}>{group.title}</Link> : <p className={styles.label}>{group.title}</p>}
             <h1>{link ? title : family.headline}</h1>
             <p className={styles.lead}>{intro}</p>
-            <Link className={styles.button} href="/company#contact">Discuss Your Project <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link className={styles.button} href="/company#contact">Review Your Requirements With Us <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </div>
           <div className={styles.emblem} aria-hidden="true"><Icon strokeWidth={1.35}/></div>
         </header>

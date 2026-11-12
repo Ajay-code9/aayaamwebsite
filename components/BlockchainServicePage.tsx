@@ -60,7 +60,7 @@ export default function BlockchainServicePage({ service }: { service: Blockchain
           <section className={styles.contact} aria-labelledby="blockchain-contact">
             <h2 id="blockchain-contact">Let’s Scope Your Project.</h2>
             <p>{service.brief}</p>
-            <Link className={styles.button} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link className={styles.button} href="/company#contact">Discuss Your Blockchain Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </section>
         </div>
       </div>

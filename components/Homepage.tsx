@@ -45,8 +45,8 @@ export default function Homepage() {
             </h1>
             <p className="product-hero-intro">AayaamX builds AI Applications, Trading Platforms, Blockchain Solutions and Custom Enterprise Software. We take your product from planning through launch and ongoing support.</p>
             <div className="product-hero-actions">
-              <Link href="#featured-work">Explore Our Work <ArrowUpRight size={18}/></Link>
-              <button type="button" onClick={() => setContact(true)}>Let&apos;s Talk <ArrowUpRight size={16}/></button>
+              <button type="button" onClick={() => setContact(true)}>Request a Technical Consultation <ArrowUpRight size={16} aria-hidden="true"/></button>
+              <Link href="#featured-work">View Case Studies <ArrowUpRight size={18} aria-hidden="true"/></Link>
             </div>
           </div>
           <HeroBrokerageDemo/>

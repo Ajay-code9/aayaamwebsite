@@ -45,7 +45,7 @@ export default function TradingServicePage({ service }: { service: TradingServic
           <section className={styles.contact} aria-labelledby="trading-contact">
             <h2 id="trading-contact">Plan Your Integration.</h2>
             <p>{service.brief}</p>
-            <Link className={styles.textLink} href="/company#contact">Talk to Our Team <ArrowUpRight size={16} aria-hidden="true"/></Link>
+            <Link className={styles.textLink} href="/company#contact">Discuss Your Trading Integration <ArrowUpRight size={16} aria-hidden="true"/></Link>
           </section>
         </div>
 

@@ -170,7 +170,7 @@ export default function BlockchainSolutionPage({ data }: { data: SolutionPageDat
           <section className={styles.brief} aria-labelledby="chain-brief">
             <h2 id="chain-brief">What to Bring to the First Call</h2>
             <p>{topic?.brief ?? 'Share who will use the product, what they need to do with the asset and which networks or tools you already use.'}</p>
-            <Link href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link href="/company#contact">Share Your Blockchain Use Case <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </section>
         </div>
 

@@ -41,7 +41,7 @@ export default function FinancialServicesPage({ industry }: { industry?: ReturnT
             <h1>{industry?.headline ?? 'Make Every Financial Workflow Easier to Trace.'}</h1>
             <p>{industry?.intro ?? financialServicesIntro}</p>
             <div className={styles.actions}>
-              <Link className={styles.button} href="/company#contact">Discuss Your Project <ArrowUpRight size={18} aria-hidden="true"/></Link>
+              <Link className={styles.button} href="/company#contact">Discuss Your Financial Platform <ArrowUpRight size={18} aria-hidden="true"/></Link>
               <a href="#financial-workflows">Explore Use Cases <ArrowDown size={17} aria-hidden="true"/></a>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function FinancialServicesPage({ industry }: { industry?: ReturnT
 
         <section className={styles.cta} aria-labelledby="financial-contact">
           <div><h2 id="financial-contact">Start With One Workflow.</h2><p>{industry?.brief ?? 'Bring a recent example, the tools or providers involved and what staff have to do by hand today.'}</p></div>
-          <Link className={styles.button} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+          <Link className={styles.button} href="/company#contact">Share Your Integration Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
         </section>
       </div>
     </main>

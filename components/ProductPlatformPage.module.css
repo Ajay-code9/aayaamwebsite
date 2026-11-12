@@ -21,7 +21,7 @@
 .previewHead h2 {font-size:clamp(18px,2vw,24px);margin:3px 0 0;color:#ecfbf9;line-height:1.15}
 .previewHead small,.record small {font-size:12px}
 .steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:0;margin:0 0 12px;list-style:none}
-.steps button {width:100%;height:100%;min-height:44px;padding:6px;border:1px solid #536f81;border-radius:7px;font-size:12px;line-height:1.25;text-align:left}
+.steps button {width:100%;height:100%;min-height:44px;padding:6px;border:1px solid #536f81;border-radius:7px;font-size:12px;line-height:1.25;text-align:left;overflow-wrap:anywhere}
 .steps button:hover,.steps button[aria-pressed="true"] {border-color:var(--signal);background:#263f4e;color:var(--signal)}
 .record {padding:13px;border:1px solid #476677;border-radius:9px;background:#172e3b}
 .record h3 {margin:5px 0;font-size:18px}
@@ -54,7 +54,11 @@
 .project figure {position:relative;margin:0;overflow:hidden;border-radius:12px;border:1px solid var(--edge);background:var(--surface);box-shadow:0 10px 28px rgba(0,0,0,0.06)}
 .project img {display:block;width:100%;height:auto;object-fit:contain}
 @media(max-width:800px) {.hero,.integration,.project{grid-template-columns:1fr}.modules,.catalogue{grid-template-columns:repeat(2,minmax(0,1fr))}.art{margin-block:24px}}
-@media(max-width:510px) {.modules,.catalogue{grid-template-columns:1fr}}
+@media(max-width:510px) {
+  .modules,.catalogue {grid-template-columns:minmax(0,1fr)}
+  .steps {grid-template-columns:minmax(0,1fr)}
+  .steps button {padding-inline:10px}
+}
 
 /* 100vh hero rule */
 @media (min-width: 741px) {

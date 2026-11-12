@@ -52,7 +52,7 @@ export default function BackofficeProductPage({ intro }: { intro: string }) {
           <section className={styles.brief} aria-labelledby="backoffice-brief">
             <h2 id="backoffice-brief">Start With One Review Queue.</h2>
             <p>Bring a funding request, account change or risk alert your staff currently checks by hand. Tell us where the source record lives and who can approve the next step.</p>
-            <Link className={styles.primary} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link className={styles.primary} href="/company#contact">Discuss Your Backoffice Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </section>
         </div>
       </div>

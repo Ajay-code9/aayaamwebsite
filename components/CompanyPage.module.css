@@ -21,9 +21,10 @@
 .contactGrid {display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(16px,4vw,44px);align-items:start;padding-block:clamp(26px,6vw,68px)}
 .contactGrid h3 {display:flex;align-items:center;gap:7px;margin:18px 0 8px}
 .contactGrid address {font-style:normal;color:var(--muted);line-height:1.65}
+.contactGrid > section {min-width:0;overflow-wrap:anywhere}
 .formCard {min-width:0;padding:clamp(17px,3vw,30px);border:1px solid var(--edge);border-radius:13px}
 .formCard > p {color:var(--muted);line-height:1.65}
-@media(max-width:720px) {.contactGrid {grid-template-columns:1fr}}
+@media(max-width:850px) {.contactGrid {grid-template-columns:minmax(0,1fr)}}
 
 .page section[id] {scroll-margin-top:clamp(96px,10vw,150px)}
 .label {font-size:.8rem;font-weight:740;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}

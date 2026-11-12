@@ -35,7 +35,7 @@ export default function DeliveryServicePage({ service }: { service: DeliveryServ
 
         <section className={styles.contact} aria-labelledby="delivery-contact">
           <div><h2 id="delivery-contact">Tell Us What You Need.</h2><p>{service.brief}</p></div>
-          <Link className={styles.button} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+          <Link className={styles.button} href="/company#contact">Share Your Delivery Requirements <ArrowUpRight size={17} aria-hidden="true"/></Link>
         </section>
 
         <nav className={styles.related} aria-label="Related services">

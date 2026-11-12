@@ -109,7 +109,7 @@ export default function AIBusinessSolutionPage({ data }: { data: SolutionPageDat
           <section className={styles.contact} aria-labelledby="ai-business-contact">
             <h2 id="ai-business-contact">What to Bring to the First Call</h2>
             <p>{topic.brief}</p>
-            <Link href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link href="/company#contact">Share Your AI Use Case <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </section>
         </div>
         {link && <nav className={styles.related} aria-label="Related AI business solutions">

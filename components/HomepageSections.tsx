@@ -52,7 +52,7 @@ function CapabilityCard({index,href}:{index:number;href:string}) {
       </div>
     </div>
     <div className="capability-visual">
-      <img className="capability-photo" src={`/capabilities/${capabilityPhotos[index]}.webp`} alt={title} width={1200} height={675} loading="lazy" decoding="async"/>
+      <img className="capability-photo" src={`/capabilities/${capabilityPhotos[index]}.webp`} alt={title} width={1200} height={572} loading="lazy" decoding="async"/>
     </div>
   </article>;
 }
@@ -196,7 +196,7 @@ export default function HomepageSections({onContact}:{onContact:()=>void}){
  </section>
  <WorkOverview/>
  <WhyAayaamX/>
- <section id="start-project" className="home-section final-cta-section"><div className="final-cta"><div className="eyebrow"><span/> YOUR NEXT CHAPTER</div><h2>Have an Idea?<br/><span>Let’s Engineer It.</span></h2><p>Tell us what you want to build, who will use it and what it needs to connect to. We’ll help define the scope and next steps.</p><div className="final-cta-actions"><button className="primary-button" onClick={onContact}>Start a Project<ArrowRight size={17}/></button><Link className="home-text-link" href="/company#contact">Contact Our Team<ArrowUpRight size={17}/></Link></div><p className="project-contact"><a href={`mailto:${company.email}`}>{company.email}</a><a href={`tel:${company.phoneHref}`}>{company.phone}</a></p><ProjectLogoBackground/></div></section>
+ <section id="start-project" className="home-section final-cta-section"><div className="final-cta"><div className="eyebrow"><span/> YOUR NEXT CHAPTER</div><h2>Have an Idea?<br/><span>Let’s Engineer It.</span></h2><p>Tell us what you want to build, who will use it and what it needs to connect to. We’ll help define the scope and next steps.</p><div className="final-cta-actions"><button className="primary-button" onClick={onContact}>Share Your Project Brief<ArrowRight size={17}/></button><Link className="home-text-link" href="/company#contact">Contact Our Team<ArrowUpRight size={17}/></Link></div><p className="project-contact"><a href={`mailto:${company.email}`}>{company.email}</a><a href={`tel:${company.phoneHref}`}>{company.phone}</a></p><ProjectLogoBackground/></div></section>
  </div>;
 }
 

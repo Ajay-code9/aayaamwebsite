@@ -48,7 +48,7 @@ export default function AIProductPage({ intro }: { intro: string }) {
           <section className={styles.brief} aria-labelledby="ai-product-brief">
             <h2 id="ai-product-brief">Bring One Real Example.</h2>
             <p>A support ticket, a document or a question your staff answer often is enough to start. Tell us where the approved information lives and who should review the result.</p>
-            <Link className={styles.primary} href="/company#contact">Talk to Our Team <ArrowUpRight size={17} aria-hidden="true"/></Link>
+            <Link className={styles.primary} href="/company#contact">Share Your AI Workflow <ArrowUpRight size={17} aria-hidden="true"/></Link>
           </section>
         </div>
       </div>

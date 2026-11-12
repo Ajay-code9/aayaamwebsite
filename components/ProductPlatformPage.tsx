@@ -25,7 +25,7 @@ export default function ProductPlatformPage({ product }: { product?: ProductPage
             {product && <p className={styles.label}>{product.title}</p>}
             <h1>{product?.headline ?? 'Platforms Built Around How Your Business Works.'}</h1>
             <p className={styles.lead}>{product?.intro ?? productsIntro}</p>
-            {product ? <Link className={styles.button} href="/company#contact">Discuss This Platform <ArrowUpRight size={17} aria-hidden="true"/></Link> :
+            {product ? <Link className={styles.button} href="/company#contact">Request a Platform Consultation <ArrowUpRight size={17} aria-hidden="true"/></Link> :
               <a className={styles.button} href="#product-catalogue">Explore Platforms <ArrowRight size={17} aria-hidden="true"/></a>}
           </div>
           {product && preview ? <ProductWorkflowPreview key={product.href} preview={preview} steps={product.demo}/> :

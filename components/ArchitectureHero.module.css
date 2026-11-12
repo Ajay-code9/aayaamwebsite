@@ -13,6 +13,8 @@
 .hero a:hover {text-decoration:underline}
 .hero svg {flex:none}
 .preview {min-width:0;padding:clamp(17px,3vw,32px);border:1px solid var(--arch-edge);border-radius:17px;background:var(--arch-surface);box-shadow:0 12px 36px #17334113}
+:global(:root:not([data-theme="dark"])) .preview {border-color:var(--light-panel-border)}
+:global(:root:not([data-theme="dark"])) .steps li span {background:var(--light-badge-surface);color:var(--light-badge-ink);border:1px solid var(--light-badge-border)}
 .preview:has(> [data-architecture-hero-image]) {padding:0;overflow:hidden}
 .preview > [data-architecture-hero-image] {display:block;width:100%;height:auto}
 .preview p {margin:10px 0 0;line-height:1.6;color:var(--muted)}

@@ -9,7 +9,7 @@ export const companyPages = {
       ['AI, Blockchain & Integrations', 'Add reviewable AI workflows, wallet-enabled features and the APIs that connect them to existing products.', '/solutions'],
     ],
     note: ['From First Release to Ongoing Support', 'We can help define the scope, design the experience, build the software and plan the launch and handover.'],
-    action: ['Explore Our Work', '/portfolio'],
+    action: ['View Case Studies', '/portfolio'],
   },
   'our-story': {
     title: 'Our Story', headline: 'From Individual Tools to Connected Products.',
@@ -46,7 +46,7 @@ export const companyPages = {
     ],
     note: ['Build Security Into the Process', 'Agree access rules early and review how the software handles sensitive records before release. NIST’s Secure Software Development Framework is a reference for incorporating security practices into delivery.'],
     reference: ['NIST Secure Software Development Framework', 'https://csrc.nist.gov/pubs/sp/800/218/final'],
-    action: ['Discuss Your Project', '/company#contact'],
+    action: ['Share Your Project Brief', '/company#contact'],
   },
   'technology-expertise': {
     title: 'Technology Expertise', headline: 'Choose Technology Around What the Product Needs.',
@@ -71,7 +71,7 @@ export const companyPages = {
       ['Engineering & Quality', 'Build and test the workflows, capture feedback and prepare the handover.'],
     ],
     note: ['Agree How We’ll Work Together', 'At kickoff, identify who owns decisions, who reviews progress and how questions reach the right person.'],
-    action: ['Talk to Our Team', '/company#contact'],
+    action: ['Request a Consultation', '/company#contact'],
   },
   careers: {
     title: 'Careers', headline: 'Help Businesses Build and Use Better Software.',

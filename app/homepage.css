@@ -170,6 +170,8 @@
 .project-form {display:grid;gap:14px}.project-form label {display:grid;gap:6px;color:#233b5b;font-size:13px;font-weight:650}.project-form input,.project-form select,.project-form textarea {width:100%;min-width:0;border:1px solid #cad9e4;background:#fff;border-radius:7px;padding:10px;color:#233b5b;font:inherit;font-weight:400}
 .project-form .form-row {display:grid;grid-template-columns:1fr 1fr;gap:10px}.project-form small {font-size:12px;line-height:1.5;color:#4e6278}.project-form .primary-button {width:fit-content}
 .project-form a {color:#18427d;font-weight:700}.project-form button svg {flex:none}
+.project-form .project-planning {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px;margin:0;padding:12px;min-inline-size:0;border:1px solid var(--line);border-radius:9px}
+.project-planning legend {padding-inline:5px;color:var(--ink);font-size:13px;font-weight:700}
 .article-page {max-width:930px}.article-page .article-category {margin-top:25px;color:#247454;font-size:12px;font-weight:700}.article-summary {font-size:19px}.article-cover {width:100%;height:auto;border-radius:17px;margin:15px 0}.article-page section {margin:32px 0}.article-page h2 {font-size:24px;margin-bottom:8px}.article-end,.related-articles {border-top:1px solid #dbe6ed;padding-top:16px;margin-top:25px}.article-end a,.related-articles a {display:block;padding:6px 0;color:#174478}.delivery-list {max-width:620px;color:#445d76;line-height:1.6}
 @media(max-width:1020px) {.ecosystem-map,.industry-grid {grid-template-columns:repeat(2,minmax(0,1fr))}.footer-main {grid-template-columns:1.4fr repeat(2,1fr)}}
 @media(max-width:720px) {.home-section-heading,.expertise-layout,.contact-page-content {grid-template-columns:1fr;gap:20px}.home-section-heading {align-items:start}.heading-aside p {margin:0 0 5px}.services-grid,.why-grid,.insight-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product-stage {grid-template-columns:1fr}.footer-main {grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.footer-identity {grid-column:1/-1}.complete-caption {flex-wrap:wrap;gap:8px}.complete-hero .canvas-wrap {bottom:86px}}
@@ -760,7 +762,7 @@
   text-wrap:balance;
 }
 .product-hero-actions {display:flex;flex-wrap:wrap;justify-content:center;gap:10px 16px;margin-top:16px}
-.product-hero-actions a, .product-hero-actions button {
+.product-hero-actions > :is(a, button) {
   display:inline-flex;
   align-items:center;
   gap:10px;
@@ -770,10 +772,10 @@
   font-size:14px;
   font-weight:650;
 }
-.product-hero-actions a {background:#216850;color:white}
-.product-hero-actions a:hover {background:#184f3d}
-.product-hero-actions button {border:1px solid #bfd4df;background:#ffffffb3}
-.product-hero-actions button:hover {color:#216850;border-color:#78ad9e}
+.product-hero-actions > :first-child {background:#216850;color:white}
+.product-hero-actions > :first-child:hover {background:#184f3d}
+.product-hero-actions > :last-child {border:1px solid #bfd4df;background:#ffffffb3}
+.product-hero-actions > :last-child:hover {color:#216850;border-color:#78ad9e}
 @media (prefers-reduced-motion:no-preference) {
   .product-hero-copy > * {animation:product-preview-enter .65s cubic-bezier(.22,1,.36,1) backwards}
   .product-hero h1 {animation-delay:80ms}
@@ -842,13 +844,9 @@ h3 {
   background:var(--capability-glow);
   color:var(--capability-ink);
 }
-.ecosystem-card .capability-visual {padding:0;overflow:hidden;min-height:0;aspect-ratio:2.1/1;background:#e6e9e5}
-.capability-photo {position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.ecosystem-card .capability-visual {padding:0;overflow:hidden;min-height:0;align-self:center;background:#e6e9e5}
+.capability-photo {display:block;width:100%;height:auto}
 .ecosystem-card .capability-symbol {z-index:1;background:#f7fbf8ed;border-color:#fff9;box-shadow:0 2px 12px #111a3026}
-@media(prefers-reduced-motion:no-preference) {
-  .capability-photo {transition:transform .45s cubic-bezier(.22,1,.36,1)}
-  .ecosystem-card:is(:hover,:focus-within) .capability-photo {transform:scale(1.035)}
-}
 .capability-copy {border-top:1px solid #edf2f6;padding:15px 18px 18px}
 .capability-copy h3 a svg {color:var(--capability-ink)}
 .case-study-card .home-text-link:is(:hover,:focus-visible) svg,
@@ -1608,7 +1606,7 @@ h3 {
 /* Deliverables Grid */
 .deliverables-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 18px;
 }
 .deliverable-card {

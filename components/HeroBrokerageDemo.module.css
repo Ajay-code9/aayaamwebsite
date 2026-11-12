@@ -10,9 +10,11 @@
   transform-style: preserve-3d;
   will-change: transform;
 }
-.stage:hover .frame {
+@media (hover:hover) and (pointer:fine) {
+ .stage:hover .frame {
   transform: rotateX(2deg) rotateY(-3deg) scale(1.015);
   box-shadow: 0 20px 50px #153e6038, 0 9px 0 #6b92ac42;
+ }
 }
 :global([data-theme="dark"]) .frame {--paper:#172632;--card:#203441;--ink:#ebf5f9;--muted:#b0c9d4;--line:#3b5261}
 .sidebar {min-width:0;overflow-y:auto;padding:clamp(12px,2vw,23px);background:radial-gradient(ellipse at bottom right,#194b65,transparent 65%),#0b1d30;color:#eff8ff}
@@ -20,6 +22,7 @@
 .brand img {display:block;width:100%;height:auto}
 .brand::after {content:'';position:absolute;inset:0;background:url('/aayaamx-logo.png') center / contain no-repeat;clip-path:polygon(45.3% 26.5%,100% 26.5%,100% 50.8%,43.05% 50.8%);filter:brightness(0) invert(.96);pointer-events:none}
 .menu {display:grid;gap:5px}
+.mobilePicker {display:none}
 .menu button {display:flex;align-items:center;gap:8px;min-height:42px;padding:7px 9px;border-radius:8px;text-align:left;color:#e1edf8;font-size:14px}
 .menu button:hover {background:#203b4f}
 .menu button[aria-pressed="true"] {background:linear-gradient(105deg,#175649,#2e733e);color:#fff}
@@ -31,6 +34,22 @@
 .view {padding:clamp(12px,2.5vw,27px);overflow-y:auto;scrollbar-gutter:stable;background:radial-gradient(ellipse at 85% 0,#73c99624,transparent 55%)}
 .view:focus-visible {outline:2px solid #389876;outline-offset:-3px}
 .view > .filters {margin-bottom:18px}
+@media (forced-colors:none) {
+  .view {--scroll-thumb:#658593}
+  .sidebar,:global([data-theme="dark"]) .view {--scroll-thumb:#729e9a}
+
+  .sidebar,.view {
+    scrollbar-width:thin;
+    scrollbar-color:var(--scroll-thumb) transparent;
+  }
+
+  @supports not (scrollbar-width:thin) {
+    :is(.sidebar,.view)::-webkit-scrollbar {width:7px}
+    :is(.sidebar,.view)::-webkit-scrollbar-track {background:transparent}
+    :is(.sidebar,.view)::-webkit-scrollbar-thumb {background:var(--scroll-thumb);border-radius:999px}
+    :is(.sidebar,.view)::-webkit-scrollbar-button {display:none}
+  }
+}
 .heading a,.caseLinks a {display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:650}
 .heading a:hover,.caseLinks a:hover {text-decoration:underline}
 .projectGrid,.caseLinks {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -93,6 +112,8 @@
 .row {display:flex;justify-content:space-between;align-items:center;gap:6px 12px;flex-wrap:wrap;border-top:1px solid var(--line);padding:9px 0;font-size:14px}
 .panel > .row:first-of-type {margin-top:8px}
 .status,.pending {display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border-radius:6px;background:#dbf2e5;color:#17543a;font-size:12px;font-weight:650}
+:global(:root:not([data-theme="dark"])) .status {background:#d6eee2;color:#104b35;box-shadow:inset 0 0 0 1px #91bba7}
+:global(:root:not([data-theme="dark"])) .pending {box-shadow:inset 0 0 0 1px #b89d69}
 .pending {background:#f7e9cd;color:#654519}
 .filters,.transaction,.reportHeading {display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .filters button {padding:6px 10px;min-height:36px;border:1px solid var(--line);border-radius:7px;font-size:13px}
@@ -101,20 +122,29 @@
 .chart {display:flex;align-items:end;gap:clamp(4px,1.2vw,12px);height:135px;padding:10px;margin-top:10px;background:repeating-linear-gradient(to top,transparent 0 26px,#66889955 26px 27px),#102942;border-radius:8px}
 .chart span {flex:1;border-radius:4px 4px 0 0;background:linear-gradient(#8be2ab,#288c79)}
 @media(max-width:670px) {
-  .workbenchBody {grid-template-columns:minmax(0,1fr)}
-  .progress {grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
-  .frame {grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);height:600px;border-radius:13px}
-  .sidebar {padding:8px}
-  .brand {display:none}
-  .menu {display:flex;overflow-x:auto;gap:5px;padding:3px;scrollbar-width:thin}
-  .menu button {flex:none;white-space:nowrap;font-size:12px;padding-inline:8px}
-  .menu button:focus-visible {outline-offset:-2px}
+  .stage {perspective:none}
+  .frame {grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;height:auto;border-radius:14px}
+  .stage:hover .frame {transform:none}
+  .sidebar {padding:14px;overflow:visible}
+  .brand,.menu,.top {display:none}
+  .mobilePicker {display:grid;gap:6px;font-size:13px;font-weight:700}
+  .mobilePicker select {width:100%;min-height:46px;padding:8px 12px;border:1px solid #7096a9;border-radius:8px;background:#f3f9fc;color:#132344;font:inherit;font-size:16px}
+  .mobilePicker select:focus-visible {outline:2px solid #a2e7c0;outline-offset:2px}
+  .main {display:block}
+  .view {padding:14px;overflow:visible;scrollbar-gutter:auto}
+  .heading a,.caseLinks a,.reset,.filters button {min-height:44px}
+  .filters button {flex:1 0 max-content;text-align:center}
   .metrics {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metrics article:last-child {grid-column:1/-1}
+  .workbenchBody {grid-template-columns:minmax(0,1fr)}
+  .workbenchHeader {gap:8px}
+  .progress {grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+  .advance {width:100%;justify-content:center}
 }
-@media(max-width:400px) {
+@media(max-width:440px) {
   .recordFields {grid-template-columns:repeat(2,minmax(0,1fr))}
-  .projectGrid button {grid-template-columns:auto minmax(0,1fr)}
-  .projectGrid button svg:last-child {display:none}
+  .projectGrid {grid-template-columns:1fr}
+  .projectGrid button {min-height:48px}
   .caseLinks {grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce) {

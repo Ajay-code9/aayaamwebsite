@@ -76,8 +76,8 @@ export default function Navbar(_props:LegacyProps={}){
  })}</ul>}
  </motion.div>}</AnimatePresence>
  </div>)}
- <Link href="/company#contact" className="mobile-contact" onClick={close}>Let’s talk about your project<ArrowUpRight size={18}/></Link></nav>
- <Link href="/company#contact" className="talk-button" onClick={close}>Let’s Talk<span><ArrowUpRight size={16}/></span></Link>
+ <Link href="/company#contact" className="mobile-contact" onClick={close}>Request a Consultation<ArrowUpRight size={18}/></Link></nav>
+ <Link href="/company#contact" className="talk-button" onClick={close}>Request a Consultation<span><ArrowUpRight size={16}/></span></Link>
  <ThemeSwitch iconOnly={true} className="navbar-theme-toggle"/>
  <button ref={toggleRef} className="mobile-toggle" aria-label={mobile?'Close navigation':'Open navigation'} aria-expanded={mobile} aria-controls="primary-navigation" onClick={()=>{cancelClose();setMobile(!mobile);setOpen(null);openRef.current=null;}}>{mobile?<X size={21}/>:<Menu size={21}/>}</button>
  </header>;

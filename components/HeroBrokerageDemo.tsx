@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import useCountUp from '@/hooks/useCountUp';
 import Link from 'next/link';
 import { ArrowDownLeft, ArrowUpRight, BrainCircuit, ChartNoAxesCombined, Check, Cloud, Code2, Gauge, LayoutGrid, Layers3, ShieldCheck, Smartphone, Wallet, PanelsTopLeft } from 'lucide-react';
@@ -44,6 +44,7 @@ const transactions = [
 
 export default function HeroBrokerageDemo() {
   const [selected, setSelected] = useState(0);
+  const mobilePicker = useRef<HTMLSelectElement>(null);
   const [view, setView] = useState<View>('Overview');
   const [account, setAccount] = useState<(typeof accountTypes)[number]>('Real');
   const [period, setPeriod] = useState<(typeof periods)[number]>('7 Days');
@@ -57,6 +58,12 @@ export default function HeroBrokerageDemo() {
     <section className={styles.frame} aria-labelledby="brokerage-demo-title">
       <aside className={styles.sidebar}>
         <div className={styles.brand}><img src="/aayaamx-logo.png" alt="AayaamX Technologies" width="1168" height="359"/></div>
+        <label className={styles.mobilePicker}>
+          Demo workspace
+          <select ref={mobilePicker} value={selected} onChange={event => setSelected(Number(event.target.value))} aria-controls="brokerage-demo-view">
+            {projects.map(({ name }, index) => <option key={name} value={index}>{name}</option>)}
+          </select>
+        </label>
         <div className={styles.menu} role="group" aria-label="Project categories">
           {projects.map(({ name, icon: Icon }, index) => <button key={name} type="button" aria-pressed={selected === index} aria-controls="brokerage-demo-view"
             onClick={() => setSelected(index)}><Icon size={17} aria-hidden="true"/>{name}</button>)}
@@ -69,7 +76,10 @@ export default function HeroBrokerageDemo() {
           {!project.href && <>
             <div className={styles.heading}><div><h3>Explore What We Build</h3><p>Choose a project category to try a sample workflow.</p></div></div>
             <div className={styles.projectGrid}>{projects.slice(1).map(({ name, icon: Icon }, index) =>
-              <button type="button" key={name} onClick={() => setSelected(index + 1)}
+              <button type="button" key={name} onClick={() => {
+                if (mobilePicker.current?.getClientRects().length) mobilePicker.current.focus();
+                setSelected(index + 1);
+              }}
                 aria-controls="brokerage-demo-view"><Icon size={20} aria-hidden="true"/><strong>{name}</strong><ArrowUpRight size={15} aria-hidden="true"/></button>
             )}</div>
             <div className={styles.panel}>

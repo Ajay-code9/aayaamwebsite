@@ -83,6 +83,45 @@ export const succeedCapitalPortalFeatures = [
 ] as const;
 
 type CaseStudySlug = (typeof caseStudies)[number]['slug'];
+
+export const caseStudyDeliveryFacts = {
+  'succeed-capital-fx': [
+    ['3 Account Views', 'Real, demo and archived accounts in one portal.'],
+    ['Connected Funding', 'Deposits, withdrawals and wallet activity alongside trading accounts.'],
+  ],
+  'solitaire-markets': [
+    ['2 Trading Channels', 'Web and mobile applications connected to the execution engine.'],
+    ['Dedicated Execution Engine', 'Broker connectivity, order routing and execution.'],
+  ],
+  'blockchain-crypto-payment-gateway': [
+    ['Deposit Address Generation', 'Creates addresses for incoming payments.'],
+    ['Settlement Records', 'Tracks network confirmations and records payments through settlement.'],
+  ],
+  'smart-contract-payment-application': [
+    ['Wallet-Signed Payments', 'Users connect a wallet and sign the payment.'],
+    ['Transaction Status', 'Verified on-chain updates appear in the application.'],
+  ],
+  'crypto-exchange-spot-futures-p2p': [
+    ['2 Access Channels', 'Web and mobile exchange applications.'],
+    ['P2P Escrow', 'An escrow workflow supports peer-to-peer trades.'],
+  ],
+  'bus-booking-admin-management-system': [
+    ['Booking & Operations', 'Passenger bookings connect with route, vehicle and schedule management.'],
+    ['Driver Portal', 'Drivers can view assigned trips and boarding information.'],
+  ],
+  'white-label-lms-platform': [
+    ['Branded Learning Portals', 'Schools and training providers can run their own branded experiences.'],
+    ['Admissions & Learning', 'Manage applications, courses and learner progress.'],
+  ],
+  'resvip-travel-booking': [
+    ['3 Search Inputs', 'Travellers search by route, date and passenger count.'],
+    ['Ticket Tracking', 'Travellers can keep track of tickets after booking.'],
+  ],
+  'fxregulation': [
+    ['Brokerage Platform', 'Trading and broker operations are part of one application.'],
+  ],
+} as const satisfies Record<CaseStudySlug, readonly (readonly [string, string])[]>;
+
 type Screenshot = {
   src: string;
   width: number;

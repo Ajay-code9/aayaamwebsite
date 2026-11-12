@@ -24,7 +24,7 @@ export default function ArchitectureHero({
           <h1>{title}</h1>
           <p className={styles.intro}>{intro}</p>
           <div className={styles.actions}>
-            <Link href="/company#contact">Discuss Your Project <ArrowUpRight size={16} aria-hidden="true"/></Link>
+            <Link href="/company#contact">Request a Technical Consultation <ArrowUpRight size={16} aria-hidden="true"/></Link>
             <a href={jump[1]}>{jump[0]} <ArrowDown size={16} aria-hidden="true"/></a>
           </div>
         </div>

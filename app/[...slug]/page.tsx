@@ -191,7 +191,17 @@ export default async function NavigationDestination({params}:RouteProps) {
 
   const guide = getResourceGuide(path);
   let content;
-  if (article) content = <ArticleContent article={article}/>;
+  if (path === '/industries' && page) content = <section className="navigation-destination">
+    <nav aria-label="Breadcrumb" className="destination-breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">Industries</span></nav>
+    <h1>Industries We Serve</h1>
+    <p className="destination-description">Explore the workflows, integrations and software we build for financial services, trading, digital assets and enterprise teams.</p>
+    <div className="insight-grid">{page.children.map(link => <Link className="insight-card" href={link.href} key={link.href}>
+      <h2>{link.title}</h2>
+      <p>{getIndustryPage(link.href)?.audience ?? financialServicesIntro}</p>
+      <strong>Explore Industry <span aria-hidden="true">↗</span></strong>
+    </Link>)}</div>
+  </section>;
+  else if (article) content = <ArticleContent article={article}/>;
   else if (path === insightsHref || path === '/resources/technology-articles') content = <section className="navigation-destination">
     <h1>{page?.title}</h1><p className="destination-description">Practical perspectives on building digital products.</p>
     <div className="insight-grid">{articles.map(item => <Link className="insight-card" key={item.slug} href={articleHref(item.slug)}>
