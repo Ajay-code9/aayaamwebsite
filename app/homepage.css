@@ -2355,3 +2355,84 @@ h3 {
   color: var(--ink);
   font-weight: 500;
 }
+
+
+/* Magnetic Cursor Spotlight Border & Surface Glow */
+.card-spotlight-border {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(85, 183, 92, 0.65),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-spotlight-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(85, 183, 92, 0.08),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ecosystem-card:hover .card-spotlight-border,
+.ecosystem-card:hover .card-spotlight-surface {
+  opacity: 1;
+}
+
+/* Visual Overlay & Architecture Preview Pill */
+.capability-visual-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, transparent 40%, rgba(12, 18, 22, 0.75) 100%);
+  opacity: 0;
+  transition: opacity 0.28s ease, backdrop-filter 0.28s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.capability-explore-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(16, 28, 130, 0.9);
+  border: 1px solid rgba(85, 183, 92, 0.5);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.3px;
+  transform: translateY(12px) scale(0.95);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 16px rgba(85, 183, 92, 0.3);
+}
+
+.ecosystem-card:hover .capability-visual-overlay {
+  opacity: 1;
+  backdrop-filter: blur(2px);
+}
+
+.ecosystem-card:hover .capability-explore-pill {
+  transform: translateY(0) scale(1);
+}
+
+.ecosystem-card:hover .capability-photo {
+  transform: scale(1.04);
+}

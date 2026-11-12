@@ -1085,3 +1085,27 @@
   .product-hero-actions > :is(a,button) {width:100%;justify-content:center}
   .project-form .primary-button {max-width:100%;white-space:normal}
 }
+
+
+[data-theme="dark"] .card-spotlight-border {
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(95, 224, 176, 0.75),
+    transparent 65%
+  );
+}
+
+[data-theme="dark"] .card-spotlight-surface {
+  background: radial-gradient(
+    300px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(85, 183, 92, 0.12),
+    transparent 70%
+  );
+}
+
+[data-theme="dark"] .capability-explore-pill {
+  background: rgba(20, 32, 26, 0.95);
+  border-color: #55b75c;
+  color: #8bf1cb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(85, 183, 92, 0.4);
+}

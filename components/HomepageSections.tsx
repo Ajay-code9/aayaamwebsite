@@ -33,12 +33,29 @@ const capabilityPhotos = [
 function CapabilityCard({index,href}:{index:number;href:string}) {
   const [title,description,audience] = capabilityCopy[index];
   const Icon = capabilityIcons[index];
+  const cardRef = useRef<HTMLElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  };
 
   return <article 
+    ref={cardRef}
     className="ecosystem-card reveal-block" 
     data-capability={index}
+    onMouseMove={handleMouseMove}
     style={{ '--card-index': index } as React.CSSProperties}
   >
+    {/* Magnetic Border & Surface Spotlight Glow */}
+    <div className="card-spotlight-border" aria-hidden="true" />
+    <div className="card-spotlight-surface" aria-hidden="true" />
+
     <div className="capability-top-bar">
       <span className="capability-category-badge" aria-hidden="true">
         <Icon size={16} strokeWidth={2}/>
@@ -58,6 +75,11 @@ function CapabilityCard({index,href}:{index:number;href:string}) {
     </div>
     <div className="capability-visual">
       <img className="capability-photo" src={`/capabilities/${capabilityPhotos[index]}.webp`} alt={title} width={1200} height={572} loading="lazy" decoding="async"/>
+      <div className="capability-visual-overlay">
+        <span className="capability-explore-pill">
+          Explore Architecture <ArrowUpRight size={14} aria-hidden="true" />
+        </span>
+      </div>
     </div>
   </article>;
 }
