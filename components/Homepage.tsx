@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import HomepageSections from './HomepageSections';
 import ProjectEnquiry from './ProjectEnquiry';
 import HeroBrokerageDemo from './HeroBrokerageDemo';
+import HeroStatsCard from './HeroStatsCard';
 import CursorGlow from './CursorGlow';
 import MarqueeStats from './MarqueeStats';
 import NetflixIntro from './NetflixIntro';
@@ -50,6 +51,7 @@ export default function Homepage() {
             </div>
           </div>
           <HeroBrokerageDemo/>
+          <HeroStatsCard/>
         </div>
       </section>
       <MarqueeStats />

@@ -122,24 +122,7 @@
 .chart {display:flex;align-items:end;gap:clamp(4px,1.2vw,12px);height:135px;padding:10px;margin-top:10px;background:repeating-linear-gradient(to top,transparent 0 26px,#66889955 26px 27px),#102942;border-radius:8px}
 .chart span {flex:1;border-radius:4px 4px 0 0;background:linear-gradient(#8be2ab,#288c79)}
 @media(max-width:670px) {
-  .stage {perspective:none}
-  .frame {grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;height:auto;border-radius:14px}
-  .stage:hover .frame {transform:none}
-  .sidebar {padding:14px;overflow:visible}
-  .brand,.menu,.top {display:none}
-  .mobilePicker {display:grid;gap:6px;font-size:13px;font-weight:700}
-  .mobilePicker select {width:100%;min-height:46px;padding:8px 12px;border:1px solid #7096a9;border-radius:8px;background:#f3f9fc;color:#132344;font:inherit;font-size:16px}
-  .mobilePicker select:focus-visible {outline:2px solid #a2e7c0;outline-offset:2px}
-  .main {display:block}
-  .view {padding:14px;overflow:visible;scrollbar-gutter:auto}
-  .heading a,.caseLinks a,.reset,.filters button {min-height:44px}
-  .filters button {flex:1 0 max-content;text-align:center}
-  .metrics {grid-template-columns:repeat(2,minmax(0,1fr))}
-  .metrics article:last-child {grid-column:1/-1}
-  .workbenchBody {grid-template-columns:minmax(0,1fr)}
-  .workbenchHeader {gap:8px}
-  .progress {grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
-  .advance {width:100%;justify-content:center}
+  .stage {display:none}
 }
 @media(max-width:440px) {
   .recordFields {grid-template-columns:repeat(2,minmax(0,1fr))}
