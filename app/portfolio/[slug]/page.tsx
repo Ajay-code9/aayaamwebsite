@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import SiteFooter from '@/components/SiteFooter';
 import { caseStudies, caseStudyDeliveryFacts, caseStudyMedia, succeedCapitalPortalFeatures } from '@/lib/portfolio';
+import { caseStudyExtendedDetails } from '@/lib/caseStudyDetails';
 import styles from './page.module.css';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,6 +28,7 @@ export default async function CaseStudyPage({ params }: Props) {
   const project = caseStudies.find(item => item.slug === slug);
   if (!project) notFound();
   const { cover, gallery } = caseStudyMedia(project.slug);
+  const details = caseStudyExtendedDetails[project.slug];
 
   return <>
     <Navbar/>
@@ -45,6 +47,31 @@ export default async function CaseStudyPage({ params }: Props) {
           <Link href="/company#contact" className="home-text-link">Discuss a Similar Project <ArrowUpRight size={16} aria-hidden="true"/></Link>
         </section>
       </div>
+      {/* Challenge & Solution Deep Dive */}
+      {details && <div className={styles.deepDive}>
+        <article className={styles.narrativeCard}>
+          <h3>The Challenge</h3>
+          <p>{details.challenge}</p>
+        </article>
+        <article className={styles.narrativeCard}>
+          <h3>Our Engineering Solution</h3>
+          <p>{details.solution}</p>
+        </article>
+      </div>}
+
+      {/* Measurable Project Impact */}
+      {details?.impactMetrics && <section className={styles.metricsSection} aria-labelledby="project-impact-title">
+        <h2 id="project-impact-title">Impact & Performance Benchmarks</h2>
+        <div className={styles.metricsGrid}>
+          {details.impactMetrics.map(([metric, value]) => (
+            <div key={metric} className={styles.metricCard}>
+              <span className={styles.metricVal}>{value}</span>
+              <span className={styles.metricLbl}>{metric}</span>
+            </div>
+          ))}
+        </div>
+      </section>}
+
       <section className={styles.gallery} aria-labelledby="case-study-delivery">
         <h2 id="case-study-delivery">Delivery at a Glance</h2>
         <dl className={styles.deliveryFacts}>
@@ -56,6 +83,30 @@ export default async function CaseStudyPage({ params }: Props) {
           ))}
         </dl>
       </section>
+
+      {/* Core Architectural Capabilities */}
+      {details?.keyCapabilities && <section className={styles.gallery} aria-labelledby="key-capabilities-title">
+        <h2 id="key-capabilities-title">Key Architectural Capabilities</h2>
+        <div className={styles.featureGrid}>
+          {details.keyCapabilities.map(([capTitle, capDesc]) => (
+            <article className={styles.scope} key={capTitle}>
+              <h3>{capTitle}</h3>
+              <p>{capDesc}</p>
+            </article>
+          ))}
+        </div>
+      </section>}
+
+      {/* Engineering Stack */}
+      {details?.technicalStack && <section className={styles.gallery} aria-labelledby="tech-stack-title">
+        <h2 id="tech-stack-title">Technologies & Infrastructure</h2>
+        <div className={styles.techTags}>
+          {details.technicalStack.map(tech => (
+            <span key={tech} className={styles.techTag}>{tech}</span>
+          ))}
+        </div>
+      </section>}
+
       {project.slug === 'succeed-capital-fx' && <section className={styles.gallery} aria-labelledby="brokerage-portal-features">
         <h2 id="brokerage-portal-features">How the Client Portal Works</h2>
         <div className={styles.featureGrid}>

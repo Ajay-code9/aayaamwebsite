@@ -82,7 +82,7 @@ export const succeedCapitalPortalFeatures = [
   ['Partner Onboarding & Market Calendar', 'The Introducing Broker area gives partners a place to apply and check application status. The weekly calendar groups economic releases by date and highlights their expected impact.'],
 ] as const;
 
-type CaseStudySlug = (typeof caseStudies)[number]['slug'];
+export type CaseStudySlug = (typeof caseStudies)[number]['slug'];
 
 export const caseStudyDeliveryFacts = {
   'succeed-capital-fx': [
