@@ -120,8 +120,25 @@
 [data-theme="dark"] .ecosystem-card .capability-copy,
 [data-theme="dark"] .ecosystem-card .capability-copy .capability-audience,
 [data-theme="dark"] .ecosystem-card[data-capability="4"] .capability-copy {border-color:var(--demo-border)}
-[data-theme="dark"] .tech-stack li {color:var(--ink)}
-[data-theme="dark"] .tech-stack img {background:#f4f8fc;border-radius:10px;padding:5px}
+[data-theme="dark"] .tech-stack li {
+  color: #8fa6b2;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+[data-theme="dark"] .tech-stack li:hover {
+  color: #5fe0b0;
+  transform: translateY(-3px);
+}
+[data-theme="dark"] .tech-stack img {
+  background: transparent !important;
+  border-radius: 0;
+  padding: 0;
+  filter: grayscale(100%) brightness(1.7) opacity(0.65);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+[data-theme="dark"] .tech-stack li:hover img {
+  filter: grayscale(0%) brightness(1.1) opacity(1);
+  transform: scale(1.12);
+}
 
 [data-theme="dark"] :is(.work-overview-tag,.work-overview-icon) {background:#26392e;color:var(--blue);border-color:var(--theme-border);box-shadow:none}
 [data-theme="dark"] .work-overview-tag svg {color:var(--green)}
