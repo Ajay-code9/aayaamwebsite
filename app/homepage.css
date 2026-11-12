@@ -808,6 +808,137 @@ h3 {
 
 /* Homepage motion and surfaces */
 .ecosystem-section .home-section-heading {margin-bottom:clamp(22px,3vw,38px)}
+.capability-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px 0;
+}
+.capability-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(85, 183, 92, 0.12), rgba(16, 28, 130, 0.08));
+  border: 1px solid rgba(85, 183, 92, 0.28);
+  color: #1a5a3a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.capability-category-badge svg {
+  color: #248053;
+}
+.capability-arrow-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f1f6fa;
+  border: 1px solid #d4e2ed;
+  color: #3b556b;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.ecosystem-card:hover .capability-arrow-btn {
+  background: #101c82;
+  color: #fff;
+  border-color: #101c82;
+  transform: translate(2px, -2px);
+  box-shadow: 0 4px 12px rgba(16, 28, 130, 0.25);
+}
+.ecosystem-card .capability-copy {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 22px 18px;
+  border: 0;
+  flex: 1;
+}
+.ecosystem-card .capability-copy h3 {
+  font-size: clamp(21px, 2.1vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #112339;
+  margin: 0 0 8px;
+}
+.ecosystem-card .capability-copy h3 a {
+  color: #112339;
+  transition: color 0.2s ease;
+}
+.ecosystem-card .capability-copy h3 a:hover {
+  color: #101c82;
+}
+.ecosystem-card .capability-copy p {
+  color: #4b6278;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+.ecosystem-card .capability-copy .capability-audience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f3f8fb;
+  border: 1px solid #dbe6ee;
+}
+.ecosystem-card .capability-audience strong {
+  display: inline-flex;
+  align-items: center;
+  color: #1f6b48;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.ecosystem-card .capability-audience span {
+  color: #274057;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.ecosystem-card .capability-visual {
+  position: relative;
+  margin: 0 20px 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #dce8ef;
+  background: #f5f8fa;
+}
+.ecosystem-card .capability-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.ecosystem-card:hover .capability-photo {
+  opacity: 1;
+}
+
+@media(min-width:851px) {
+  .ecosystem-card[data-capability="4"] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    grid-template-rows: auto;
+  }
+  .ecosystem-card[data-capability="4"] .capability-top-bar {
+    grid-column: 1 / -1;
+  }
+  .ecosystem-card[data-capability="4"] .capability-copy {
+    grid-column: 1;
+  }
+  .ecosystem-card[data-capability="4"] .capability-visual {
+    grid-column: 2;
+    height: auto;
+    margin: 10px 20px 20px 0;
+  }
+}
+
 .ecosystem-card {
   --capability-glow:#dbeafa;
   --capability-ink:#244b77;
