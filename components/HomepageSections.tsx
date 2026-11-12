@@ -7,6 +7,7 @@ import {verticals} from '@/lib/homepage';
 import {company} from '@/lib/company';
 import {caseStudies,caseStudyHref} from '@/lib/portfolio';
 import CaseStudyCarousel from './CaseStudyCarousel';
+import ClientTestimonials from './ClientTestimonials';
 
 function ProjectLogoBackground() {
   return <div className="cta-infinity" aria-hidden="true">
@@ -206,6 +207,7 @@ function WhyAayaamX() {
 export default function HomepageSections({onContact}:{onContact:()=>void}){
  return <div className="homepage-sections">
  <FeaturedWork/>
+ <ClientTestimonials/>
  <section id="ecosystem" className="home-section ecosystem-section" aria-labelledby="capabilities-title">
   <div className="home-section-heading"><h2 id="capabilities-title">What We Build.</h2><p>From AI Agents and Trading Engines to Enterprise Platforms, Web3 Applications and the Cloud APIs that connect them.</p></div>
   <div className="ecosystem-map">
