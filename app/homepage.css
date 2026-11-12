@@ -591,12 +591,135 @@
   23% {stroke-dashoffset:-1;opacity:1}
   24%,100% {stroke-dashoffset:-1;opacity:0}
 }
+.work-arrow-desktop {
+  display: block;
+}
+.work-arrow-mobile {
+  display: none;
+}
+
 @media(max-width:700px) {
-  .work-overview-steps {gap:66px}
-  .work-overview-icon {width:59px;height:59px;margin:12px auto 0}
-  .work-overview-step:not(:nth-child(2)) .work-overview-icon {margin:0 auto 12px}
-  .work-overview-arrow {display:block;left:50%;top:auto;bottom:-41px;width:60px;transform:translateX(-50%) rotate(90deg)}
-  .work-overview-copy {width:min(100%,440px);margin-inline:auto}
+  .work-overview-steps {gap:46px;position:relative}
+  .work-arrow-desktop {display:none}
+  .work-overview-arrow {display:none}
+
+  /* Enhanced Mobile Card Steps */
+  .work-overview-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 20px 28px;
+    border-radius: 20px;
+    background: linear-gradient(160deg, #ffffff, #f4fbf8);
+    border: 1px solid #dce8ef;
+    box-shadow: 0 10px 30px rgba(16, 28, 130, 0.06), 0 2px 8px rgba(85, 183, 92, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .work-overview-icon {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 14px;
+    border: 1.5px solid rgba(85, 183, 92, 0.35);
+    background: linear-gradient(145deg, #ffffff, #eaf6f2);
+    box-shadow: 0 8px 24px rgba(85, 183, 92, 0.18), inset 0 1px 0 #ffffff;
+    animation: iconFloat 4s ease-in-out infinite alternate;
+  }
+
+  .work-overview-step:nth-child(2) .work-overview-icon {
+    animation-delay: 1.3s;
+  }
+  .work-overview-step:nth-child(3) .work-overview-icon {
+    animation-delay: 2.6s;
+  }
+
+  /* Number Badge on Step Icon */
+  .work-overview-icon > span:not(.work-overview-pulse) {
+    top: -6px;
+    right: -6px;
+    width: 27px;
+    height: 27px;
+    background: linear-gradient(135deg, #101c82, #1b7348);
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(16, 28, 130, 0.25);
+  }
+
+  /* Pulse wave behind icon */
+  .work-overview-pulse {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(85, 183, 92, 0.6);
+    pointer-events: none;
+    animation: stepIconPulse 3s ease-out infinite;
+  }
+
+  /* Mobile Vertical Connector with Animated Energy Dot */
+  .work-arrow-mobile {
+    display: flex;
+    position: absolute;
+    bottom: -46px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 48px;
+    color: #4da378;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .work-mobile-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+  }
+
+  .work-mobile-energy-dot {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    margin-left: -3.5px;
+    border-radius: 50%;
+    background: #55b75c;
+    box-shadow: 0 0 10px #55b75c, 0 0 4px #8bf1cb;
+    animation: energyTravel 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .work-overview-copy {width: 100%; margin: 0 auto}
+  .work-overview-copy h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #112339;
+    margin-bottom: 6px;
+  }
+  .work-overview-copy p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #4d647a;
+    margin: 0;
+  }
+}
+
+@keyframes iconFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+@keyframes stepIconPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes energyTravel {
+  0% { top: 4px; opacity: 0; transform: scale(0.8); }
+  25% { opacity: 1; transform: scale(1.2); }
+  85% { opacity: 1; transform: scale(1); }
+  100% { top: 40px; opacity: 0; transform: scale(0.5); }
 }
 
 

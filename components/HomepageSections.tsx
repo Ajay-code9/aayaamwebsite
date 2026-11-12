@@ -104,12 +104,27 @@ function WorkOverview() {
     </div>
     <ol className="work-overview-steps" ref={steps} data-live={visible}>
       {workSteps.map(({title,icon:Icon,detail},index) => <li key={title} className="work-overview-step reveal-block" style={{'--step-delay':index * 1.45 + 's'} as React.CSSProperties}>
+        <div className="work-overview-icon">
+          <Icon size={26} strokeWidth={1.7}/>
+          <span aria-hidden="true">0{index + 1}</span>
+          <span className="work-overview-pulse" aria-hidden="true"/>
+        </div>
         <div className="work-overview-copy"><h3>{title}</h3><p>{detail}</p></div>
-        <div className="work-overview-icon"><Icon size={26} strokeWidth={1.7}/><span aria-hidden="true">0{index + 1}</span></div>
-        {index < 2 && <svg className="work-overview-arrow" viewBox="0 0 220 64" fill="none" aria-hidden="true">
-          <path d={index === 0 ? 'M4 55C64-2 145-2 214 55m-14-2 14 2-2-14' : 'M4 9c63 56 145 56 210 0m-14 1 14-1-2 14'}/>
-          <path className="work-overview-signal" pathLength="1" d={index === 0 ? 'M4 55C64-2 145-2 214 55' : 'M4 9c63 56 145 56 210 0'}/>
-        </svg>}
+        {index < 2 && <>
+          {/* Desktop Curved Arrow */}
+          <svg className="work-overview-arrow work-arrow-desktop" viewBox="0 0 220 64" fill="none" aria-hidden="true">
+            <path d={index === 0 ? 'M4 55C64-2 145-2 214 55m-14-2 14 2-2-14' : 'M4 9c63 56 145 56 210 0m-14 1 14-1-2 14'}/>
+            <path className="work-overview-signal" pathLength="1" d={index === 0 ? 'M4 55C64-2 145-2 214 55' : 'M4 9c63 56 145 56 210 0'}/>
+          </svg>
+          {/* Mobile Vertical Fluid Connection Line with Pulsing Energy Bead */}
+          <div className="work-arrow-mobile" aria-hidden="true">
+            <svg viewBox="0 0 24 68" fill="none" className="work-mobile-svg">
+              <path d="M12 4 C12 28, 12 40, 12 60" stroke="currentColor" strokeWidth="2" strokeDasharray="3 3"/>
+              <path d="M7 55 L12 62 L17 55" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span className="work-mobile-energy-dot" />
+          </div>
+        </>}
       </li>)}
     </ol>
   </section>;

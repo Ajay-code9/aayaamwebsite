@@ -129,6 +129,41 @@
 [data-theme="dark"] .work-overview-arrow {stroke:#7fb8c4}
 [data-theme="dark"] .work-overview-signal {stroke:#8ae6bd}
 
+@media(max-width:700px) {
+  [data-theme="dark"] .work-overview-step {
+    background: linear-gradient(160deg, #182226, #11181b);
+    border-color: #24353c;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 1px 1px rgba(85, 183, 92, 0.15);
+  }
+  [data-theme="dark"] .work-overview-icon {
+    background: linear-gradient(145deg, #1e2c31, #141f23);
+    border-color: rgba(85, 183, 92, 0.45);
+    color: #5fe0b0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  [data-theme="dark"] .work-overview-icon > span:not(.work-overview-pulse) {
+    background: linear-gradient(135deg, #101c82, #248053);
+    border-color: #1a262a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  [data-theme="dark"] .work-overview-pulse {
+    border-color: rgba(95, 224, 176, 0.5);
+  }
+  [data-theme="dark"] .work-arrow-mobile {
+    color: #5fe0b0;
+  }
+  [data-theme="dark"] .work-mobile-energy-dot {
+    background: #5fe0b0;
+    box-shadow: 0 0 12px #5fe0b0, 0 0 6px #ffffff;
+  }
+  [data-theme="dark"] .work-overview-copy h3 {
+    color: #f1f7f9;
+  }
+  [data-theme="dark"] .work-overview-copy p {
+    color: #9cb1bd;
+  }
+}
+
 /* Why AayaamX Section */
 [data-theme="dark"] .why-aayaamx-list li {
   background:linear-gradient(145deg,#16241c,#111b15);
